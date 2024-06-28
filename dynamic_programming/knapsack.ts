@@ -1,14 +1,21 @@
 /**
- * Solves the 0-1 Knapsack Problem.
- * @param capacity Knapsack capacity
- * @param weights Array of item weights
- * @param values Array of item values
- * @returns Maximum value subset such that sum of the weights of this subset is smaller than or equal to capacity
- * @throws If weights and values arrays have different lengths
- * @see [Knapsack](https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/)
- * @example knapsack(3, [3, 4, 5], [30, 50, 60]) // Output: 90
+/**
+ * @description Computes the maximum value that can be achieved by including or
+ * excluding items in a knapsack with limited capacity, based on their weights and values.
+ * 
+ * @param { number } capacity - 2D array that will store the calculated maximized
+ * values or minimized values, with dimensions of weight and value, where the array
+ * length indicates the number of items in the array.
+ * 
+ * @param { number[] } weights - 2D array of weights, where each weight is an integer
+ * between 1 and capacity, and the lengths of both arrays are the same.
+ * 
+ * @param { number[] } values - 2D array containing the initial values for each
+ * position in the resulting matrix.
+ * 
+ * @returns { number } the maximum value that can be achieved when a set of items
+ * with different weights and values are packed into a knapsack of capacity `capacity`.
  */
-
 export const knapsack = (
   capacity: number,
   weights: number[],

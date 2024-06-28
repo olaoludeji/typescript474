@@ -1,5 +1,9 @@
 import { gaussianElimination } from '../gaussian_elimination'
 
+/**
+ * @description Performs Gaussian elimination to solve systems of linear equations,
+ * and returns the solution as an array of integers.
+ */
 describe('gaussianElimination', () => {
   it('should solve system of linear equations', () => {
     const A: number[][] = [

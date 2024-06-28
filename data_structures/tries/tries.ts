@@ -28,9 +28,15 @@ export class Trie {
   constructor() {}
 
   /**
-   * Inserts a word into the Trie.
-   *
-   * @param word - The word to insert into the Trie.
+   * @description Takes a `TrieNode` and a `string` parameter, and adds the characters
+   * of the `string` to the `TrieNode`. If a character does not exist in the `TrieNode`,
+   * a new `TrieNode` is created for that character and added to the `TrieNode`. The
+   * function then marks the `TrieNode` as a word.
+   * 
+   * @param { TrieNode } node - TrieNode to be updated with the given word.
+   * 
+   * @param { string } word - word to be inserted into the trie data structure and is
+   * used to determine the corresponding node to be created or updated in the trie.
    */
   private insertNode(node: TrieNode, word: string): void {
     for (const char of word) {
@@ -43,23 +49,31 @@ export class Trie {
   }
 
   /**
-   * Searches for a word in the Trie.
-   *
-   * @param word - The word to search for.
-   * @param isPrefixMatch - Indicates whether to perform a prefix match (default: false).
-   *   If true, the method returns true if the Trie contains words with the specified prefix.
-   *   If false, the method returns true only if an exact match is found.
-   * @returns True if the word (or prefix) is found in the Trie; otherwise, false.
+   * @description Searches for a specific word within the trie data structure, returning
+   * `true` if found and `false` otherwise, based on the provided `word` and `isPrefixMatch`.
+   * 
+   * @param { string } word - search query for which the function will look for a match
+   * within the code's root node or its subtrees.
+   * 
+   * @param { boolean } isPrefixMatch - prefix match of the input word to the current
+   * node's value or children's values, which is used to shorten the search process
+   * when looking up words in the dictionary.
+   * 
+   * @returns { boolean } a boolean value indicating whether the given word can be found
+   * in the tree.
    */
   public find(word: string, isPrefixMatch: boolean = false): boolean {
     return this.searchNode(this.root, word, isPrefixMatch)
   }
 
   /**
-   * Adds a word to the Trie.
-   *
-   * @param word - The word to add to the Trie.
-   * @returns The Trie instance, allowing for method chaining.
+   * @description Modifies the existing root node by adding a new child node representing
+   * the input string `word`.
+   * 
+   * @param { string } word - string that will be inserted as a new node into the tree
+   * data structure.
+   * 
+   * @returns { this } a reference to the newly added node.
    */
   public add(word: string): this {
     this.insertNode(this.root, word)
@@ -67,13 +81,20 @@ export class Trie {
   }
 
   /**
-   * Searches for a word in the Trie.
-   *
-   * @param node - The current Trie node being examined.
-   * @param word - The word to search for.
-   * @param prefixMatch - Indicates whether to perform a prefix match.
-   * @returns True if the word (or prefix) is found in the Trie; otherwise, false.
-   * @private
+   * @description Searches a trie data structure for a given word. It iterates through
+   * the characters of the input word and returns true if a prefix match is found or
+   * false otherwise.
+   * 
+   * @param { TrieNode } node - current TrieNode being searched in the given word.
+   * 
+   * @param { string } word - word to search for, and it is used to determine if the
+   * `node` argument is a prefix of the word.
+   * 
+   * @param { boolean } prefixMatch - whether or not the given word is a
+   * prefix of the current node's label.
+   * 
+   * @returns { boolean } a boolean value indicating whether a word exists in the given
+   * TrieNode structure based on the provided word and prefix match condition.
    */
   private searchNode(
     node: TrieNode,

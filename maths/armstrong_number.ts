@@ -1,17 +1,11 @@
 /**
- * @function armstrongNumber
- * @description Check if the provided number is an Armstrong number or not.
- * @summary Armstrong numbers are numbers, the sum of whose digits each raised
- * to the power of the number of digits is equal to the number itself.
- * For example:
- * 370 is an Armstrong number since 3^3 + 7^3 + 0^3 = 370
- * (These numbers are also known as Narcissistic numbers, and Pluperfect numbers)
- * @param {number} num The number you want to check for
- * @return {boolean} Whether the input number is an Armstrong number
- * @see [Wikipedia](https://en.wikipedia.org/wiki/Armstrong_number)
- * @see [OEIS](https://oeis.org/A005188)
- * @example armstrongNumber(370) = true
- * @example armstrongNumber(10) = false
+ * @description Checks if a given number is an Armstrong number, which are numbers
+ * that can be expressed as the sum of their proper divisors (excluding the number itself).
+ * 
+ * @param { number } num - 10-digit number that is cloned and manipulated in the function.
+ * 
+ * @returns { boolean } a boolean value indicating whether the input number is an
+ * Armstrong number or not.
  */
 export const armstrongNumber = (num: number): boolean => {
   if (typeof num !== 'number' || num <= 0) return false

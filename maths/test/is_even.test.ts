@@ -1,5 +1,9 @@
 import { isEven } from '../is_even'
 
+/**
+ * @description Tests if an input number is even or odd by asserting its outcome
+ * against a specified value. It also validates that only whole numbers are accepted.
+ */
 describe('isEven', () => {
   test.each([
     [2, true],

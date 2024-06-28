@@ -1,5 +1,10 @@
 import { Trie } from '../tries'
 
+/**
+ * @description Tests a Trie object's methods for adding and finding words. It adds
+ * words to the Trie, checks if they can be found using `trie.find()`, and verifies
+ * that incomplete words are not returned when using the `true` parameter of `trie.find()`.
+ */
 describe('Trie', () => {
   let trie: Trie
 

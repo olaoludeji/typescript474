@@ -1,6 +1,13 @@
 import { Queue } from '../queue'
 
 type QueueConstructor = new <T>() => Queue<T>
+/**
+ * @description Performs a series of unit tests for a generic queue data structure,
+ * verifying various methods such as `enqueue`, `isEmpty`, `front`, `length`, and `dequeue`.
+ * 
+ * @param { QueueConstructor } Queue - queue for which various functionalities are
+ * being tested through the series of unit tests.
+ */
 export function testQueue(Queue: QueueConstructor) {
   it('enqueue should add a new element to the queue', () => {
     const queue = new Queue<number>()

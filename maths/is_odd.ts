@@ -1,11 +1,12 @@
 /**
- * @function isOdd
- * @description Determine whether a number is odd.
- * @param {Number} num - A number.
- * @return {Boolean} - Whether the given number is odd.
- * @see https://en.wikipedia.org/wiki/Parity_(mathematics)
- * @example isOdd(1) = true
- * @example isOdd(2) = false
+ * @description Takes a number parameter and checks if it is integer. If it's not,
+ * an error message is thrown. Otherwise, the function returns true if the number is
+ * odd and false otherwise.
+ * 
+ * @param { number } num - number being analyzed to determine if it is even or odd.
+ * 
+ * @returns { boolean } a boolean value indicating whether the input number is odd
+ * or not.
  */
 export const isOdd = (num: number): boolean => {
   if (!Number.isInteger(num)) {

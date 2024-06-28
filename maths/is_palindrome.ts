@@ -1,10 +1,12 @@
 /**
- * A function to see if a number is a palindrome.
- * Note that if the reversed number is larger than MAX_SAFE_INTEGER, rounding errors may occur and the result may be incorrect.
- * Time Complexity: O(log(n))
- *
- * @param number The input number.
- * @return {boolean} Wether the number is a Palindrome or not.
+ * @description Determines whether a given number is a palindrome by repeatedly
+ * dividing it by 10, floor-ing the result, and comparing it to the original number
+ * or a reversed version of it.
+ * 
+ * @param { number } number - 10-digit integer to be evaluated for being a perfect square.
+ * 
+ * @returns { boolean } a boolean value indicating whether the given number is a
+ * palindrome or not.
  */
 export const isPalindrome = (number: number): boolean => {
   if (number < 0 || (number % 10 === 0 && number !== 0)) {

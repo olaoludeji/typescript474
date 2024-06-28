@@ -1,5 +1,8 @@
 import { degreesToRadians } from '../degrees_to_radians'
 
+/**
+ * @description Calculates radians from degrees using a constant conversion factor.
+ */
 test('DegreesToRadians', () => {
   expect(degreesToRadians(0)).toBe(0)
   expect(degreesToRadians(45)).toBe(0.7853981633974483)

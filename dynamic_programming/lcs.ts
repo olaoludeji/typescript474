@@ -1,10 +1,19 @@
 /**
- * Find the Longest Common Subsequence (LCS) of two strings.
- * @param text1 - The first input string.
- * @param text2 - The second input string.
- * @returns The longest common subsequence as a string.
+/**
+ * @description Calculates and returns the longest common subsequence between two
+ * given strings by filling a 2D array with the lengths of the subsequence, reconstructing
+ * the subsequence from the array, and joining the elements into a single string.
+ * 
+ * @param { string } text1 - 1st string for which the longest common subsequence is
+ * to be calculated.
+ * 
+ * @param { string } text2 - 2nd string to find the longest common suffix with, and
+ * it is used to compute the lengths of the longest common subsequence (LCS) between
+ * the 2 strings by comparing its characters with those of the `text1` parameter.
+ * 
+ * @returns { string } a string representing the longest common subsequence between
+ * two given strings.
  */
-
 export const longestCommonSubsequence = (
   text1: string,
   text2: string

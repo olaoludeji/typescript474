@@ -13,6 +13,14 @@ export class CircularQueue<T> {
   private rearIndex: number
   private size: number
 
+  /**
+   * @description Initializes a Circular Queue with the given size by creating an empty
+   * array and storing its size. It also sets the front and rear indices to -1 and the
+   * overall size.
+   * 
+   * @param { number } size - amount of elements that will be stored in the queue when
+   * the constructor is called.
+   */
   constructor(size: number) {
     this.queue = new Array(size)
     this.frontIndex = -1
@@ -21,9 +29,11 @@ export class CircularQueue<T> {
   }
 
   /**
-   * Adds an item to the queue.
-   *
-   * @param item The item being added to the queue.
+   * @description Manages the insertion of items into a queue. It checks if the queue
+   * is full and raises an error if it is, or updates the indices of the front and rear
+   * elements and adds the new item to the end of the queue otherwise.
+   * 
+   * @param { T } item - value that is to be enqueued into the queue.
    */
   enqueue(item: T): void {
     if (
@@ -45,10 +55,10 @@ export class CircularQueue<T> {
   }
 
   /**
-   * Removes an item from the queue and returns it.
-   *
-   * @throws Queue Underflow if the queue is empty.
-   * @returns The item that was removed from the queue.
+   * @description Removes an element from the front of a queue and returns it, ensuring
+   * that the queue remains in a valid state.
+   * 
+   * @returns { T | undefined } an undefined value.
    */
   dequeue(): T | undefined {
     if (this.frontIndex == -1) {
@@ -69,9 +79,12 @@ export class CircularQueue<T> {
   }
 
   /**
-   * Returns the item at the front of the queue.
-   *
-   * @returns The item at the front of the queue or null if the queue is empty.
+   * @description Retrieves the front element of a queue without removing it, returning
+   * `null` if the queue is empty and the current index is `-1`, otherwise returning
+   * the front element.
+   * 
+   * @returns { T | null | undefined } the value stored at the front of the queue, or
+   * `null` if the queue is empty.
    */
   peek(): T | null | undefined {
     if (this.frontIndex == -1) {
@@ -82,18 +95,22 @@ export class CircularQueue<T> {
   }
 
   /**
-   * Checks if the queue is empty.
-   *
-   * @returns {boolean} Whether the queue is empty or not.
+   * @description Checks if a vector is empty by checking if its `frontIndex` is equal
+   * to `-1`. If it is, the function returns `true`, otherwise it returns `false`.
+   * 
+   * @returns { boolean } `true` if the list is empty, otherwise it is `false`.
    */
   isEmpty(): boolean {
     return this.frontIndex == -1
   }
 
   /**
-   * Returns the number of items in the queue.
-   *
-   * @returns {number} The number of items in the queue.
+   * @description Calculates the number of elements in a linked list, taking into account
+   * the position of the first and last elements. It returns the total number of elements
+   * including the gap between the front and rear elements.
+   * 
+   * @returns { number } the number of elements in the linked list, calculated based
+   * on the indices of its head and tail nodes.
    */
   length(): number {
     if (this.frontIndex == -1) {

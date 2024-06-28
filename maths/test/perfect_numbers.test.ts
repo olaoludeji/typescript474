@@ -1,5 +1,9 @@
 import { isPerfectNumber } from '../perfect_number'
 
+/**
+ * @description It.each([...]) tests whether isPerfectNumber() returns the expected
+ * value for various inputs.
+ */
 describe('perfect Numbers tests', () => {
   it.each([
     [6, true],

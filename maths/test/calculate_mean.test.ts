@@ -1,5 +1,9 @@
 import { calculateMean } from '../calculate_mean'
 
+/**
+ * @description Calculates the mean of an array of numbers using ` Array.prototype.reduce()`.
+ * It throws an error if the input is invalid and returns the mean value otherwise.
+ */
 describe('Tests for AverageMean', () => {
   it('should be a function', () => {
     expect(typeof calculateMean).toEqual('function')

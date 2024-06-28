@@ -1,12 +1,13 @@
 /**
- * @author : dev-madhurendra<https://github.com/dev-madhurendra>
- * @description
- *  Swap Sort is an algorithm to find the number of swaps required to sort an array.
- * @param {number[]} inputArr - Array of numbers
- * @return {number} - Number of swaps required to sort the array.
- * @see <https://www.geeksforgeeks.org/minimum-number-swaps-required-sort-array/>
+/**
+ * @description Takes an unsorted array of numbers and returns the number of swap
+ * operations required to sort it.
+ * 
+ * @param { number[] } inputArr - array that will be sorted, and it is passed as an
+ * argument to the function to enable sorting of its elements.
+ * 
+ * @returns { number } the number of swap operations required to sort the given array.
  */
-
 export const minSwapsToSort = (inputArr: number[]): number => {
   const sortedArray = inputArr.slice()
 

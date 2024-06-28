@@ -1,5 +1,9 @@
 import { parseNestedBrackets } from '../parse_nested_brackets'
 
+/**
+ * @description Takes a string argument, parses it for nested brackets, and returns
+ * an array of strings representing the found tags.
+ */
 describe('parseNestedBrackets', () => {
   it('should return an array of the tags', () => {
     expect(parseNestedBrackets('<MAIN hoge><MAIN2 fuga>')).toEqual([

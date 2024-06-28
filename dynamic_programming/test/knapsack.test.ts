@@ -12,6 +12,10 @@ const cases: [number, number[], number[], number][] = [
   ]
 ]
 
+/**
+ * @description Tests the `knapsack` function by providing different input combinations
+ * and checking if the output is equal to the expected result.
+ */
 describe('Knapsack Algorithm Test', () => {
   test.each(cases)(
     'given %p capacity available, with weights %p and values %p, knapsack should return %p',

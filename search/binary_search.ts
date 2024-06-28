@@ -1,19 +1,17 @@
 /**
- * @function binarySearch
- * @description binary search algorithm (iterative & recursive implementations) for a sorted array.
- *
- * The algorithm searches for a specific value in a sorted array in logarithmic time.
- * It repeatedly halves the portion of the list that could contain the item,
- * until you've narrowed down the possible indices to just one.
- *
- * @param {number[]} array - sorted list of numbers
- * @param {number} target - target number to search for
- * @return {number} - index of the target number in the list, or -1 if not found
- * @see [BinarySearch](https://www.geeksforgeeks.org/binary-search/)
- * @example binarySearch([1,2,3], 2) => 1
- * @example binarySearch([4,5,6], 2) => -1
+/**
+ * @description Performs a binary search algorithm to find an integer value within
+ * an array, using a simple iterative approach to narrow down the search space efficiently.
+ * 
+ * @param { number[] } array - 0-based index of an array of numbers that contains the
+ * values to be searched for the target value.
+ * 
+ * @param { number } target - value that the function should search for within the
+ * given array.
+ * 
+ * @returns { number } an integer indicating the index of the target value within the
+ * given array, or `-1` if not found.
  */
-
 export const binarySearchIterative = (
   array: number[],
   target: number
@@ -40,6 +38,26 @@ export const binarySearchIterative = (
   return array[middle] === target ? middle : -1
 }
 
+/**
+ * @description Performs a recursive binary search on an array of numbers to find the
+ * target value within the bounds of the array. It checks if the target is within the
+ * bounds, then recursively searches for the target in half of the remaining space
+ * until it's found or determined that it's not in the array.
+ * 
+ * @param { number[] } array - ndarray of integers that will be searched for the
+ * target value using the binary search algorithm.
+ * 
+ * @param { number } target - value that the function is searching for within the
+ * given array.
+ * 
+ * @param { number } start - 0-based index of the leftmost element to search within
+ * the array, and its value is used to determine the beginning of the search range.
+ * 
+ * @param { binary_expression } end - last index of the array that is searched.
+ * 
+ * @returns { number } a integer value indicating the position of the target element
+ * in the array if it exists, or -1 if not found.
+ */
 export const binarySearchRecursive = (
   array: number[],
   target: number,

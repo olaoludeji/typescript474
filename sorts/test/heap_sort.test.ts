@@ -1,5 +1,9 @@
 import { HeapSort } from '../heap_sort'
 
+/**
+ * @description Tests HeapSort's behavior for different input arrays of numbers,
+ * asserting their sorted order is correct (`[1, 2, 3, ...]`).
+ */
 describe('Heap Sort', () => {
   it('should return the correct value for average case', () => {
     expect(HeapSort([1, 4, 2, 5, 9, 6, 3, 8, 10, 7])).toStrictEqual([

@@ -1,12 +1,12 @@
 /**
- * @function findFactors
- * @description Find all the factors of a natural number.
- * @param {number} num - A natural number.
- * @return {Set<number>} - A set of all the factors of given natural number.
- * @see https://en.wikipedia.org/wiki/Divisor
- * @example findFactors(1) = [1]
- * @example findFactors(4) = [1,2,4]
- * @example findFactors(16) = [1,3,5,15]
+ * @description Takes a positive integer `num` as input and returns a Set containing
+ * all factors (including itself and multipliers) of that number in the form of a
+ * list of integers.
+ * 
+ * @param { number } num - natural number that determines which factors will be found
+ * and added to the resulting set.
+ * 
+ * @returns { Set<number> } a set of natural numbers that are factors of the input number.
  */
 export const findFactors = (num: number): Set<number> => {
   if (num <= 0 || !Number.isInteger(num)) {

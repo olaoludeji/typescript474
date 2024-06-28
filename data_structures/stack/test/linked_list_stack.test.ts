@@ -1,5 +1,9 @@
 import { LinkedListStack } from '../linked_list_stack'
 
+/**
+ * @description Tests a `LinkedListStack` implementation, verifying top-element access
+ * and pop/push operations within expected limits.
+ */
 describe('Linked List Stack', () => {
   const stack: LinkedListStack<number> = new LinkedListStack<number>(4)
 

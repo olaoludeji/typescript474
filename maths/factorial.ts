@@ -1,11 +1,12 @@
 /**
- * @function factorial
- * @description Calculate the factorial of a natural number.
- * @param {number} num - A natural number.
- * @return {number} - The factorial.
- * @see https://en.wikipedia.org/wiki/factorial
- * @example factorial(0) = 1
- * @example factorial(3) = 6
+ * @description Is called with the argument `num - 1`, returning the result of that
+ * call multiplied by `num`.
+ * 
+ * @param { number } num - natural number that is multiplied with the factorial of
+ * the given number less than it.
+ * 
+ * @returns { number } calculated and passed as an argument to the function, which
+ * then performs a calculation based on that value.
  */
 export const factorial = (num: number): number => {
   if (num < 0 || !Number.isInteger(num)) {

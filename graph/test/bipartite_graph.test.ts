@@ -1,5 +1,9 @@
 import { isBipartite } from '../bipartite_graph'
 
+/**
+ * @description Checks whether a given graph is bipartite using a brute-force approach
+ * by iterating through all possible subsets of nodes and checking if they form a bipartition.
+ */
 describe('isBipartite', () => {
   it('should return true for a bipartite graph', () => {
     const graph = [

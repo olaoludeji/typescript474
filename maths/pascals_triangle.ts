@@ -1,18 +1,14 @@
 /**
- * Pascal's Triangle is an array of binomial coefficients. It can be used for unwrapping terms like
- * (a + b)^5.
- * To construct Pascal's Triangle you add the numbers above the child entry together. Here are the first five rows:
- *     1
- *    1 1
- *   1 2 1
- *  1 3 3 1
- * 1 4 6 4 1
- *
- * Time Complexity: quadratic (O(n^2)).
- *
- * @param n The exponent / The index of the searched row.
- * @returns The nth row of Pascal's Triangle
- * @see https://en.wikipedia.org/wiki/Pascal's_triangle
+ * @description Generates an array of numbers representing the Pascal's Triangle up
+ * to a given row length `n`. Each number in the array represents the sum of the two
+ * preceding numbers in the row. The final number in the array is the sum of all the
+ * previous numbers.
+ * 
+ * @param { number } n - 2D matrix size, determining the number of rows and columns
+ * in the resulting array.
+ * 
+ * @returns { number[] } an array of arrays representing the Pascal's triangle up to
+ * a given number `n`.
  */
 export const pascalsTriangle = (n: number): number[] => {
   const arr: number[][] = []

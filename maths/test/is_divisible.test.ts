@@ -1,5 +1,10 @@
 import { isDivisible } from '../is_divisible'
 
+/**
+ * @description Tests whether a number is divisible by another number, using the
+ * `isDivisible` method. It also tests whether a number divides to zero, which will
+ * throw an error.
+ */
 describe('isDivisible', () => {
   test.each([
     [1, 1],

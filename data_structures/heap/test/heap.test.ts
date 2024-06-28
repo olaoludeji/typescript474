@@ -1,5 +1,10 @@
 import { MaxHeap, MinHeap, PriorityQueue } from '../heap'
 
+/**
+ * @description Initializes a `MaxHeap` object and performs various operations to
+ * test its functionality, such as inserting elements, removing the maximum element,
+ * and removing all elements in order.
+ */
 describe('MaxHeap', () => {
   let heap: MaxHeap<number>
   const elements: number[] = [
@@ -30,6 +35,12 @@ describe('MaxHeap', () => {
     heap.check()
   })
 
+  /**
+   * @description Sorts and removes all elements from a given `MaxHeap`.
+   * 
+   * @param { MaxHeap<number> } heap - MaxHeap data structure, which is used to store
+   * and manipulate the elements being sorted.
+   */
   const extract_all = (heap: MaxHeap<number>) => {
     ;[...elements]
       .sort((a, b) => b - a)
@@ -55,6 +66,13 @@ describe('MaxHeap', () => {
   })
 })
 
+/**
+ * @description Tests MinHeap and PriorityQueue implementations by inserting elements
+ * into a heap/queue, checking its state, removing the minimum element(s), and
+ * increasing the priority of certain elements.
+ * 
+ * @returns { number } a list of expectation results for testing the MinHeap class.
+ */
 describe('MinHeap', () => {
   let heap: MinHeap<number>
   const elements: number[] = [
@@ -85,6 +103,16 @@ describe('MinHeap', () => {
     heap.check()
   })
 
+  /**
+   * @description Takes a MinHeap and an array of elements, sorts the elements, and
+   * then repeatedly extracts the largest element from the heap until the heap is empty.
+   * 
+   * @param { MinHeap<number> } heap - MinHeap data structure that is to be sorted and
+   * checked for emptiness during the execution of the function.
+   * 
+   * @param { number[] } elements - 0-based array of numbers that will be sorted and
+   * passed to the ` MinHeap` for testing its functionality.
+   */
   const extract_all = (heap: MinHeap<number>, elements: number[]) => {
     ;[...elements]
       .sort((a, b) => a - b)
@@ -110,6 +138,14 @@ describe('MinHeap', () => {
   })
 
   it('should increase priority', () => {
+    /**
+     * @description Simply returns its input value without modifying it.
+     * 
+     * @param { number } a - numerical value that is returned by the function when it is
+     * called.
+     * 
+     * @returns { number } `a`, the input parameter passed to the function.
+     */
     const heap = new PriorityQueue((a: number) => {
       return a
     }, elements.length)

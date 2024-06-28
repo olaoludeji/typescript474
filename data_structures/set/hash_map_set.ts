@@ -9,14 +9,19 @@ import { MapSet } from './map_set'
  * @extends MapSet<K>
  */
 export class HashMapSet<K> extends MapSet<K> {
+  /**
+   * @description Initializes the properties and methods of a subclass, inherited from
+   * its superclass.
+   */
   constructor() {
     super()
   }
 
   /**
-   * Initializes the map used to store the set.
-   *
-   * @returns {Map<K, null>} The map used to store the set.
+   * @description Generates a new instance of `Map`. The resulting map has no values
+   * assigned to its key-value pairs.
+   * 
+   * @returns { Map<K, null> } a map with all key-value pairs set to `null`.
    */
   protected initMap(): Map<K, null> {
     return new HashMap<K, null>()

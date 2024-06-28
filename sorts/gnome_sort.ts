@@ -1,12 +1,12 @@
 /**
- * @function GnomeSort
- * @description Gnome sort is a sort algorithm that moving an element to its proper place is accomplished by a series of swap
- * @param {number[]} arr - The input array
- * @return {number[]} - The sorted array.
- * @see [GnomeSort] https://en.wikipedia.org/wiki/Gnome_sort
- * @example gnomeSort([8, 3, 5, 1, 4, 2]) = [1, 2, 3, 4, 5, 8]
+/**
+ * @description Sorts an array by iteratively swapping and shifting elements until
+ * they are sorted in ascending order.
+ * 
+ * @param { number[] } arr - array of numbers that is being sorted.
+ * 
+ * @returns { number[] } a sorted version of the original array.
  */
-
 export const gnomeSort = (arr: number[]): number[] => {
   if (arr.length <= 1) {
     return arr

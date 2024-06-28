@@ -1,5 +1,9 @@
 import { longestCommonSubsequence } from '../lcs'
 
+/**
+ * @description Evaluates input strings and returns their longest common subsequence
+ * in lowercase using JavaScript's `String.prototype.length` property.
+ */
 describe('longestCommonSubsequence', () => {
   it('should return the longest common subsequence', () => {
     expect(longestCommonSubsequence('ABCD', 'ACDF')).toBe('ACD')

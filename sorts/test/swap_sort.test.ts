@@ -1,5 +1,9 @@
 import { minSwapsToSort } from '../swap_sort'
 
+/**
+ * @description Takes an array and returns the minimum number of swaps needed to sort
+ * it.
+ */
 describe('SwapSort', () => {
   it.each([
     { input: [], expected: 0 },

@@ -4,15 +4,21 @@ export enum Calendar {
 }
 
 /**
- * @function getWeekday
- * @description Calculate the day of the week for any Julian or Gregorian calendar date.
- * @param {number} year - Year with century.
- * @param {number} month - Month of the year (1-12).
- * @param {number} day - Day of the month (1-31).
- * @return {number} Day of the week, where 0 represents Sunday.
- * @see https://en.wikipedia.org/wiki/Zeller's_congruence
- * @example getWeekday(2000, 1, 1) = 6
- * @example getWeekday(1500, 1, 1, Calendar.Julian) = 3
+ * @description Takes a year, month, and day as input, calculates the corresponding
+ * weekday based on the given calendar (Gregorian or non-Gregorian), and returns it.
+ * 
+ * @param { number } year - 4-digit year value used in the calculation of the weekday,
+ * ranging from 1 to 4 digits (0000 to 9999).
+ * 
+ * @param { number } month - 3-digit month number of the calendar system being used,
+ * which can range from 1 to 12.
+ * 
+ * @param { number } day - 1st day of the month and ranges from 1 to 31, inclusive.
+ * 
+ * @param { Calendar } calendar - 4-year cycle of weeks and years used for computing
+ * the weekday of a date, with different cycles for Gregorian and non-Gregorian calendars.
+ * 
+ * @returns { number } a number between 0 and 6, representing the day of the week.
  */
 export const getWeekday = (
   year: number,

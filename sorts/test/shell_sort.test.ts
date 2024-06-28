@@ -1,5 +1,10 @@
 import { shellSort } from '../shell_sort'
 
+/**
+ * @description ShellSort tests three scenarios: average, worst, and best cases. It
+ * expect the sorted array to match the original unsorted array after applying the
+ * Shell sort algorithm.
+ */
 describe('Shell Sort', () => {
   it('should return the correct value for average case', () => {
     expect(shellSort([4, 1, 8, 10, 3, 2, 5, 0, 7, 6, 9])).toStrictEqual([

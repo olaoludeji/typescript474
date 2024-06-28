@@ -1,5 +1,9 @@
 import { binaryConvert } from '../binary_convert'
 
+/**
+ * @description Implements  a binary conversion function that takes an integer input
+ * and returns its binary representation as a string.
+ */
 describe('binaryConvert', () => {
   it('should return the correct value', () => {
     expect(binaryConvert(4)).toBe('100')

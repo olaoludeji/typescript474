@@ -1,18 +1,11 @@
 /**
- * @function HexagonalNumbers
- * @description To generate the requested number of hexagonal numbers
- * @summary A hexagonal number, hₙ, is a figurate number which represents the number
- * of distinct dots in a pattern of dots consisting of the outlines of regular
- * hexagons with sides upto 'n' dots, when the hexagons are overlaid so that they share a common vertex
- *
- * The nth hexagonal number, hₙ, is calculated by the formula:
- * hₙ = n * (2n - 1)
- * @see [Wikipedia](https://en.wikipedia.org/wiki/Hexagonal_number)
- * @see [OEIS](https://oeis.org/A000384)
- * @param {number} n - The number of Hexagonal numbers to generate
- * @returns {number[]} - An array containing first 'n' hexagonal numbers
- * @example HexagonalNumbers(10) = [ 1, 6, 15, 28, 45, 66, 91, 120, 153, 190 ]
- * @example HexagonalNumbers(15) =  [ 1, 6, 15, 28, 45, 66, 91, 120, 153, 190, 231, 276, 325, 378, 435 ]
+ * @description Generates a list of non-negative integer numbers up to a given input
+ * value using a recursive formula.
+ * 
+ * @param { number } n - number of hexagonal numbers to be generated in the function.
+ * 
+ * @returns { number[] } an array of non-negative integers, each corresponding to a
+ * hexagonal number.
  */
 export const HexagonalNumbers = (n: number): number[] => {
   if (isNaN(n)) throw new Error('The input needs to be a number')

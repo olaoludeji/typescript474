@@ -1,16 +1,11 @@
 /**
- * @function aliquotSum
- * @description Returns the aliquot sum of the provided number
- * @summary The aliquot sum of a number n is the sum of all the proper divisors
- * of n apart from n itself.
- * So, for example, the number 6 has three proper divisors, 1, 2, 3
- * Hence its aliquot sum is 1 + 2 + 3 = 6
- * For all prime numbers, the aliquot sum is 1, and for 1, the aliquot sum is 0
- * @param {number} num The input number
- * @return {number} The aliquot sum of the number
- * @see [Wikipedia](https://en.wikipedia.org/wiki/Aliquot_sum)
- * @example aliquotSum(18) = 21
- * @example aliquotSum(15) = 9
+ * @description Calculates the sum of the first `num` consecutive integers that are
+ * multiples of a given number.
+ * 
+ * @param { number } num - number for which the function calculates the sum of its digits.
+ * 
+ * @returns { number } the sum of the numbers from 1 to the input number, minus the
+ * sum of the numbers from 1 to the half of the input number.
  */
 export const aliquotSum = (num: number): number => {
   if (typeof num !== 'number') throw new TypeError('Input needs to be a number')

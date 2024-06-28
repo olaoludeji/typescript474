@@ -1,13 +1,13 @@
 /**
- * @function isSquareFree
- * @description A number is said to be square-free if no prime factor divides it more than once, i.e., the largest power of a prime factor that divides n is one.
- * @param {number} n - A number.
- * @return {boolean} - True if given number is a square free.
- * @see https://www.geeksforgeeks.org/square-free-number/
- * @example isSquareFree(10) = true
- * @example isSquareFree(20) = false
+/**
+ * @description Determines whether a given number is square-free by recursively
+ * dividing it by smaller numbers and checking if it is divisible. If the number is
+ * not square-free, the function returns false.
+ * 
+ * @param { number } n - natural number to be tested for being a perfect square.
+ * 
+ * @returns { boolean } a boolean indicating whether the input number is square-free.
  */
-
 export const isSquareFree = (n: number): boolean => {
   if (n < 0) throw new Error('number must be a natural number > 0')
   if (n % 2 === 0) n = n / 2

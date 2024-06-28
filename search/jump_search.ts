@@ -1,23 +1,17 @@
 /**
- * @function jumpSearch
- * @description Jump search algorithm for a sorted array.
- *
- * Jump search is a searching algorithm for sorted arrays that checks elements
- * by jumping ahead by fixed steps. The optimal step size is the square root of the array length.
- *
- * The algorithm works as follows:
- * 1.Start from the first element and jump by step size until finding an element that is greater than or equal to the target value.
- * 2.Go back one step and perform a linear search from there until finding the target value or reaching the end of the subarray.
- * 3.If the target value is found, return its index. Otherwise, return -1 to indicate that it is not in the array.
- *
- * @param {number[]} array - sorted list of numbers
- * @param {number} target - target number to search for
- * @return {number} - index of the target number in the list, or -1 if not found
- * @see [JumpSearch](https://www.geeksforgeeks.org/jump-search/)
- * @example jumpSearch([1,2,3], 2) => 1
- * @example jumpSearch([4,5,6], 2) => -1
+/**
+ * @description Searches for an element `target` in an array of numbers using a binary
+ * search approach. If found, it returns the index of the element; otherwise, it
+ * returns -1.
+ * 
+ * @param { number[] } array - 0-based index of a number array that contains the
+ * values to be searched for a target value.
+ * 
+ * @param { number } target - value that the function is searching for within the array.
+ * 
+ * @returns { number } an integer index indicating the position of the target value
+ * in the input array.
  */
-
 export const jumpSearch = (array: number[], target: number): number => {
   if (array.length === 0) return -1
 

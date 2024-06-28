@@ -1,5 +1,9 @@
 import { calculateMedian } from '../calculate_median'
 
+/**
+ * @description Calculates the median of an array of numbers using a recursive approach.
+ * It validates the input and returns the calculated median value.
+ */
 describe('Tests for CalculateMedian', () => {
   it('should be a function', () => {
     expect(typeof calculateMedian).toEqual('function')

@@ -1,10 +1,11 @@
 /**
- * @function isSortedArray
- * @description Checks if the array is sorted.
- * @param {number[]} arr - array to check if it is sorted
- * @returns {boolean} - true if the array is sorted and false if it's not sorted
- * @example isSortedArray([1,2,3]) => true
- * @example isSortedArray([9,2,3]) => false
+ * @description Verifies if an array is sorted by checking if every element greater
+ * than its previous one is true.
+ * 
+ * @param { number[] } arr - 1D array whose sorting is being tested.
+ * 
+ * @returns { boolean } a boolean value indicating whether the provided array is
+ * sorted or not.
  */
 export function isSortedArray(arr: number[]): boolean {
   for (let i = 0; i < arr.length - 1; i++) {

@@ -1,5 +1,9 @@
 import { addBinary } from '../add_binary'
 
+/**
+ * @description Adds two binary numbers and returns the result in binary form, handling
+ * carry and different-length inputs gracefully.
+ */
 describe('Add Binary Number', () => {
   it('should add two binary numbers with no carry', () => {
     const result = addBinary('1101', '1011')

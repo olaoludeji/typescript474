@@ -12,6 +12,15 @@
  */
 
 // Function to perform the Heap Sort
+/**
+ * @description Takes an array of numbers as input, sorts it using a maximum heap
+ * algorithm and returns the sorted array.
+ * 
+ * @param { number[] } arr - 1-dimensional array of numbers to be converted into a
+ * max heap.
+ * 
+ * @returns { number[] } a sorted array of the original input elements.
+ */
 export const HeapSort = (arr: number[]): number[] => {
   buildMaxHeap(arr)
 
@@ -24,6 +33,12 @@ export const HeapSort = (arr: number[]): number[] => {
 }
 
 // Function to build a max-heap from an array
+/**
+ * @description Organizes an array of numbers into a maximally Heapsort-optimal binary
+ * heap by recursively heapifying the array.
+ * 
+ * @param { number[] } arr - 1D array to be built into a max heap.
+ */
 function buildMaxHeap(arr: number[]): void {
   const n = arr.length
 
@@ -33,6 +48,19 @@ function buildMaxHeap(arr: number[]): void {
 }
 
 // Function to heapify a subtree rooted at a given index
+/**
+ * @description Organizes an array into a heap by recursively sorting elements at
+ * index and its neighbors based on their values. It maintains the property that the
+ * largest element is always located at the root of the array.
+ * 
+ * @param { number[] } arr - 1D array to be sorted using the heapify algorithm.
+ * 
+ * @param { number } index - 0-based index of the subarray to be sorted and is used
+ * as the starting point for the heapification process.
+ * 
+ * @param { number } size - total number of elements in the array being sorted, which
+ * is used to determine the end index of the heapify process.
+ */
 function heapify(arr: number[], index: number, size: number): void {
   let largest = index
   const left = 2 * index + 1
@@ -53,6 +81,16 @@ function heapify(arr: number[], index: number, size: number): void {
 }
 
 // Function to swap two elements in an array
+/**
+ * @description Modifies two elements of an array by swapping their values and leaving
+ * the array unchanged.
+ * 
+ * @param { number[] } arr - 1D array whose elements are swapped by the `swap()` function.
+ * 
+ * @param { number } i - 0-based index of the first element to be swapped in the array.
+ * 
+ * @param { number } j - 2nd index of the array to be swapped.
+ */
 function swap(arr: number[], i: number, j: number): void {
   const temp = arr[i]
   arr[i] = arr[j]

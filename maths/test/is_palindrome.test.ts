@@ -1,5 +1,9 @@
 import { isPalindrome } from '../is_palindrome'
 
+/**
+ * @description Takes an array of number pairs and verifies that the corresponding
+ * isPalindrome returns the expected value
+ */
 describe('isPalindrome', () => {
   test.each([
     [0, true],

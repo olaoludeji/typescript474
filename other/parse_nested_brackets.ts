@@ -1,20 +1,20 @@
 /**
- * @function parseNestedBrackets
- * @description Parse nested brackets algorithm for a string.
- * @param {string} text - text to parse
- * @param {string} openBrackets - open brackets
- * @param {string} closingBrackets - closing brackets
- * @returns {string[]} - array of the tags
- * @example parseNestedBrackets(`<MAIN hoge><MAIN2 fuga>`) => [ '<MAIN hoge>', '<MAIN2 fuga>' ]
- * @example parseNestedBrackets(
- *  `THIS IS SAMPLE TEXT(MAIN hoge 0.1 fuga(ITEM fuga hoge)hoge(ITEM2 nogami(ABBR)))`,
- *  { openBrackets: '(', closingBrackets: ')' }) => 
- *  [
-      '(MAIN hoge 0.1 fuga(ITEM fuga hoge)hoge(ITEM2 nogami(ABBR)))',
-      '(ITEM fuga hoge)',
-      '(ITEM2 nogami(ABBR))',
-      '(ABBR)'
-    ]
+ * @description Takes a string as input, extracts all occurrences of nested bracketed
+ * expressions inside it and returns an array of these expressions with their respective
+ * openers and closers separated by an empty string.
+ * 
+ * @param { string } text - given code to be documented, which is processed by the
+ * function to generate the output array of tags.
+ * 
+ * @param { string } openBrackets - opening bracket of a tag, which is used to keep
+ * track of the current floor in the nested structure.
+ * 
+ * @param { string } closingBrackets - 2nd part of the nesting brackets that the
+ * function should be looking for to determine if it's a new tag, or continuation of
+ * a previously found one.
+ * 
+ * @returns { string } an array of tags, including nested tags and their associated
+ * brackets.
  */
 export const parseNestedBrackets = (
   text: string,

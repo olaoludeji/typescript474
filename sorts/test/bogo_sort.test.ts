@@ -1,5 +1,9 @@
 import { bogoSort } from '../bogo_sort'
 
+/**
+ * @description Tests the output of `bogoSort` for four input arrays, expecting their
+ * respective output values to match after running the `bogoSort` function.
+ */
 describe('BogoSort', () => {
   test.each([
     { arr: [1], expectedResult: [1] },

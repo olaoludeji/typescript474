@@ -1,17 +1,14 @@
 /**
- * @function pronicNumber
- * @description Checks whether a given number is a pronic number or not
- * @summary Pronic numbers, or oblong numbers as they are often referred to as,
- * are numbers which are the product of two consecutive integers. That is,
- * they are numbers of the form n*(n+1)
- *
- * For example, 20 is a pronic number since 20 = 4 * 5
- * @param num The number to check for being pronic
- * @returns {boolean} Whether the number is pronic or not
- * @see [Wikipedia](https://en.wikipedia.org/wiki/Pronic_number)
- * @example pronicNumber(20) = true
- * @example pronicNumber(30) = true
- * @example pronicNumber(49) = false
+ * @description Takes a non-negative integer `n`, and checks if it is a pronic number
+ * (i.e., a number that can be expressed as $a^2b$, where $a$ and $b$ are integers).
+ * If the input meets the condition, the function returns `true`. Otherwise, an error
+ * message is thrown.
+ * 
+ * @param { number } n - non-negative integer that the function will check if it
+ * satisfies certain conditions to return `true`.
+ * 
+ * @returns { boolean } a boolean value indicating whether the input number is a
+ * non-negative integer.
  */
 const pronicNumber = (n: number) => {
   if (isNaN(n)) throw new Error('The input needs to be a number')

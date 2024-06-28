@@ -1,5 +1,10 @@
 import { binarySearchIterative, binarySearchRecursive } from '../binary_search'
 
+/**
+ * @description Tests various scenarios for the `binarySearch` functions, including
+ * invalid or missing inputs, returns -1 if the target is not found, and correct
+ * indices for found targets.
+ */
 describe('BinarySearch', () => {
   const testArray: number[] = [1, 2, 3, 4]
   type FunctionsArray = { (array: number[], index: number): number }[]

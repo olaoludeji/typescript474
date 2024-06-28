@@ -26,6 +26,10 @@ const cases = [
   [2, 3, []]
 ] as const
 
+/**
+ * @description Performs `it.each` on a series of test cases, evaluating whether the
+ * generated combinations match expected values.
+ */
 describe('AllCombinationsOfSizeK', () => {
   it.each(cases)(
     'create all combinations given n=%p and k=%p',

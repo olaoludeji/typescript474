@@ -1,13 +1,15 @@
 /**
- * @function sieveOfEratosthenes
- * @description Find the prime numbers between 2 and n
- * @param {number} n - numbers set the limit that the algorithm needs to look to find the primes
- * @return {number[]} - List of prime numbers
- * @see https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes\
- * @example sieveOfEratosthenes(5) = [2,3,5]
- * @example sieveOfEratosthenes(10) = [2,3,5,7]
+/**
+ * @description 1. Initializes an array of boolean values to filter out prime numbers,
+ * and  2. Iterates over the numbers from 2 to n using a nested loop to mark as
+ * composite (not prime) all multiples of each number found in step 1. The result is
+ * an array of prime numbers in descending order.
+ * 
+ * @param { number } n - integer value that the sieve of Eratosthenes will be applied
+ * to, with non-negative and integers-only values being accepted.
+ * 
+ * @returns { number[] } an array of prime numbers up to the input value `n`.
  */
-
 export function sieveOfEratosthenes(n: number): number[] {
   if (n < 0 || !Number.isInteger(n)) {
     throw new Error('Only natural numbers are supported')

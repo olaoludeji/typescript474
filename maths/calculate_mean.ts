@@ -1,13 +1,12 @@
 /**
- * @function calculateMean
- * @description This script will find the mean value of a array of numbers.
- * @param {number[]} numbers - Array of numeric values
- * @return {number} - mean of input numbers
- * @see [Mean](https://en.wikipedia.org/wiki/Mean)
- * @example calculateMean([1, 2, 4, 5]) = 3
- * @example calculateMean([10, 40, 100, 20]) = 42.5
+/**
+ * @description Takes an array of numbers and calculates its mean by reducing the
+ * values to a single value, dividing it by the number of elements in the array.
+ * 
+ * @param { number[] } numbers - array that is being reduced and divided.
+ * 
+ * @returns { number } a float value representing the mean of the input `numbers` array.
  */
-
 export const calculateMean = (numbers: number[]): number => {
   if (numbers.length < 1) {
     throw new TypeError('Invalid Input')

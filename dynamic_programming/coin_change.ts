@@ -4,11 +4,20 @@ export interface CoinChange {
 }
 
 /**
- * Given a set of categories of coins C and an amount of money S, the goal is:
- * to give change for S but to use a minimum number of coins. Suppose each category of coin has an infinite number of pieces.
- * @param money - amon of money.
- * @param coins - The coins that are available.
- * @returns CoinChange, the minimum number of coins, and which coins are selected
+ * @description Calculates the minimum number of coins required to make a given amount
+ * of money using dynamic programming. It fills a two-dimensional table with values,
+ * then uses recursion to find the optimal coin combinations for each row in the
+ * table. The final output is an object with a `minCoins` property representing the
+ * minimum number of coins needed and a `coins` property containing the sequence of
+ * coins used to make the money.
+ * 
+ * @param { number } money - amount of money that needs to be changed into coins.
+ * 
+ * @param { number[] } coins - array of coins available for change, which is used to
+ * determine the minimum number of coins required to make up the desired amount of money.
+ * 
+ * @returns { CoinChange } an object containing the minimum number of coins required
+ * to make change for a given amount of money, along with an array of the coins needed.
  */
 export const coinChange = (money: number, coins: number[]): CoinChange => {
   const minCoins: number[] = Array(money + 1).fill(Infinity)

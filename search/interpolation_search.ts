@@ -1,13 +1,16 @@
 /**
- * @function interpolationSearch
- * @description Interpolation search is an algorithm for searching for a
- *  key in an array that has been ordered by numerical values assigned
- *  to the keys (key values)
- * @param {number[]} array - list of numbers
- * @param {number} target - target number to search for
- * @return {number} - index of the target number in the list, or -1 if not found
- * @see https://en.wikipedia.org/wiki/Interpolation_search
- * @example interpolationSearch([1, 3, 5, 7, 9, 11], 1) => 0
+ * @description Performs binary search for a target value within an array of numbers.
+ * It determines the location of the target value by iteratively dividing the interval
+ * between the low and high indices into half until the target is found or the interval
+ * becomes too small to continue searching.
+ * 
+ * @param { number[] } array - 0-based index array containing values to be searched
+ * for the target value.
+ * 
+ * @param { number } target - value being searched for within the array.
+ * 
+ * @returns { number } the index of the target value within the given array, or -1
+ * if it is not found.
  */
 export const interpolationSearch = (
   array: number[],

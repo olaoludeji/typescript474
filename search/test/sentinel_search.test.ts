@@ -1,5 +1,10 @@
 import { sentinelSearch } from '../sentinel_search'
 
+/**
+ * @description Takes an array and a target value as input, it expects an index in
+ * return and provides a assertion that the searched value is equal to the returned
+ * index using `toStrictEqual()`
+ */
 describe('Sentinel search', () => {
   test.each([
     [['o', 'b', 'c'], 'c', 2],

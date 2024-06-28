@@ -1,9 +1,17 @@
 /**
- * Adds two binary strings and returns the result as a binary string.
- *
- * @param firstBinaryNo - The first binary string.
- * @param secondBinaryNo - The second binary string.
- * @returns The binary sum of the input strings.
+ * @description Calculates the result of adding two binary numbers, represented as
+ * strings of digits, by performing a iterative approach where both numbers are used
+ * to calculate the next digit in the result. The function returns the final result
+ * as a string of digits.
+ * 
+ * @param { string } firstBinaryNo - 1-based index of the first binary number to be
+ * added.
+ * 
+ * @param { string } secondBinaryNo - 2nd binary number to be added to the first
+ * binary number.
+ * 
+ * @returns { string } a string representing the sum of two binary numbers, calculated
+ * according to the rules of binary addition.
  */
 export function addBinary(
   firstBinaryNo: string,

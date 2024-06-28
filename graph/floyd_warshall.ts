@@ -1,12 +1,13 @@
 /**
- * @function floydWarshall
- * @description Compute the shortest path for all pairs of nodes for a graph without negative weight edges. The input graph is a adjacency matrix, where graph[i][j] holds the weight of edges a->b. If the edge does not exist, the value in the matrix is Infinity.
- * @Complexity_Analysis
- * Time complexity: O(V^3)
- * Space Complexity: O(V^2). This space is required to hold the result
- * @param {number[][]} graph - The graph in adjacency matrix form
- * @return {number[][]} - A matrix holding the shortest path for each pair of nodes. matrix[i][j] holds the distance of the shortest path (i -> j).
- * @see https://en.wikipedia.org/wiki/Floyd%E2%80%93Warshall_algorithm
+ * @description Calculates the shortest path between all pairs of nodes in a weighted
+ * graph using dynamic programming. It iteratively updates the shortest path matrix
+ * by relaxing the paths to include additional nodes.
+ * 
+ * @param { number[][] } graph - 2D grid of an undirected weighted graph, where each
+ * cell contains a number representing the edge weight between adjacent cells.
+ * 
+ * @returns { number[][] } an updated weighted adjacency matrix of the graph,
+ * representing the shortest paths between all nodes.
  */
 export const floydWarshall = (graph: number[][]): number[][] => {
   let distances = structuredClone(graph)

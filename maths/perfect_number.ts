@@ -1,13 +1,17 @@
 /**
- * @function isPerfectNumber
- * @abstract A function to determine if a number is a perfect number
- * @param {number} n
- *
- * @example console.log(isPerfectNumber(6)) => true
- * @example console.log(isPerfectNumber(28)) => true
- * @example console.log(isPerfectNumber(12))=> false
+/**
+ * @description Determines whether a positive integer `n` is a perfect number, which
+ * means it equals the sum of its proper divisors. The function iterates through each
+ * divisor and adds it to `sum` if the number is not already included in the sum or
+ * if it is equal to `n` modulo the current divisor. Finally, it checks if the result
+ * is equal to `n`.
+ * 
+ * @param { number } n - integer value that the function is checking to be a perfect
+ * square.
+ * 
+ * @returns { boolean } a boolean value indicating whether the given number is a
+ * perfect number.
  */
-
 export const isPerfectNumber = (n: number): boolean => {
   if (n <= 0 || !Number.isInteger(n)) {
     return false

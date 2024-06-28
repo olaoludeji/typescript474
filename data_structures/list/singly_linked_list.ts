@@ -8,6 +8,15 @@ import { LinkedList } from './linked_list'
  * @property next A reference to the next node in the list. Can reference to null, if there is no next element.
  */
 class ListNode<T> {
+  /**
+   * @description Creates a new instance of the `ListNode` class with an initial element
+   * and an optional next node.
+   * 
+   * @param { T } data - value that will be stored in the Node's value field.
+   * 
+   * @param { ListNode<T> } next - next list node in the list, providing a reference
+   * to it for further traversal or manipulation within the function.
+   */
   constructor(
     public data: T,
     public next?: ListNode<T>
@@ -31,7 +40,7 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
   private length: number
 
   /**
-   * Creates a new, empty linked list.
+   * @description Sets `this.head`, `this.tail`, and `this.length` to `undefined`.
    */
   constructor() {
     this.head = undefined
@@ -40,20 +49,25 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Checks, if the list is empty.
-   *
-   * @returns Whether the list is empty or not.
+   * @description Determines if a given list is empty by returning `true` if it has no
+   * head and `false` otherwise.
+   * 
+   * @returns { boolean } a `boolean` indicating whether the linked list is empty or not.
    */
   isEmpty(): boolean {
     return !this.head
   }
 
   /**
-   * Gets the data of the node at the given index.
-   * Time complexity: linear (O(n))
-   *
-   * @param index The index of the node.
-   * @returns The data of the node at the given index or null, if no data is present.
+   * @description Retrieves a value from a linked list at a specified index, returning
+   * `null` if the index is out of bounds or the list is empty.
+   * 
+   * @param { number } index - position of the element to be retrieved in the list, and
+   * it is used to determine whether the element exists in the list and to return its
+   * value if it is found.
+   * 
+   * @returns { T | null } the data stored at the specified index in the list, or `null`
+   * if the index is out of range or the list is empty.
    */
   get(index: number): T | null {
     if (index < 0 || index >= this.length) {
@@ -77,10 +91,11 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Inserts the given data as the first node of the list.
-   * Time complexity: constant (O(1))
-   *
-   * @param data The data to be inserted.
+   * @description Adds a new element to a singly linked list. It creates a new `ListNode`
+   * object and links it to the existing list head or tail, depending on whether the
+   * list is empty or not. The length of the list is incremented.
+   * 
+   * @param { T } data - data that is being added to the list.
    */
   push(data: T): void {
     const node: ListNode<T> = new ListNode<T>(data)
@@ -97,11 +112,10 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Removes the first node of the list.
-   * Time complexity: constant (O(1))
-   *
-   * @returns The data of the node that was removed.
-   * @throws Index out of bounds if the list is empty.
+   * @description Removes the last element from a list and returns its value, handling
+   * index out-of-bounds errors gracefully.
+   * 
+   * @returns { T } the value of the popped element from the linked list.
    */
   pop(): T {
     if (this.isEmpty()) {
@@ -116,10 +130,10 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Inserts the given data as a new node after the current TAIL.
-   * Time complexity: constant (O(1))
-   *
-   * @param data The data of the node being inserted.
+   * @description Updates a singly linked list by adding an element to the end, maintaining
+   * proper links with the existing nodes.
+   * 
+   * @param { T } data - value to be appended to the list.
    */
   append(data: T): void {
     const node: ListNode<T> = new ListNode<T>(data)
@@ -135,11 +149,11 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Removes the current TAIL of the list.
-   * Time complexity: linear (O(n))
-   *
-   * @returns The data of the former TAIL.
-   * @throws Index out of bounds if the list is empty.
+   * @description Removes the tail node from a singly-linked list, checking for validity
+   * of input and updating the linked list's length accordingly.
+   * 
+   * @returns { T } a value of type `T`, which is the data stored in the tail node of
+   * the list.
    */
   removeTail(): T {
     if (!this.head) {
@@ -167,12 +181,13 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Inserts the data as a new node at the given index.
-   * Time complexity: O(n)
-   *
-   * @param index The index where the node is to be inserted.
-   * @param data The data to insert.
-   * @throws Index out of bounds, when given an invalid index.
+   * @description Inserts a new node into a linked list at a specified index, ensuring
+   * that the index is within the range of the list's length and properly connecting
+   * the new node to the existing nodes.
+   * 
+   * @param { number } index - position in the list where the new element should be inserted.
+   * 
+   * @param { T } data - element being inserted into the list at the specified index.
    */
   insertAt(index: number, data: T): void {
     if (index < 0 || index > this.length) {
@@ -205,12 +220,13 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Removes the node at the given index.
-   * Time complexity: O(n)
-   *
-   * @param index The index of the node to be removed.
-   * @returns The data of the removed node.
-   * @throws Index out of bounds, when given an invalid index.
+   * @description Removals an element at a given index in a linked list, handling edge
+   * cases and updating the linked list's length accordingly.
+   * 
+   * @param { number } index - 0-based index of the node to be removed from the linked
+   * list.
+   * 
+   * @returns { T } a reference to the removed node's data.
    */
   removeAt(index: number): T {
     if (index < 0 || index >= this.length) {
@@ -242,7 +258,8 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Clears the list.
+   * @description Sets the `head`, `tail`, and `length` properties of the linked list
+   * to `undefined`.
    */
   clear(): void {
     this.head = undefined
@@ -251,9 +268,10 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Converts the list to an array.
-   *
-   * @returns The array representation of the list.
+   * @description Transforms a circular linked list into an array, appending each node's
+   * data to the result array. It does not modify the original list.
+   * 
+   * @returns { T[] } an array of type `T`.
    */
   toArray(): T[] {
     const array: T[] = []
@@ -268,9 +286,9 @@ export class SinglyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Gets the length of the list.
-   *
-   * @returns The length of the list.
+   * @description Returns the length of an object.
+   * 
+   * @returns { number } the length of the object.
    */
   getLength(): number {
     return this.length

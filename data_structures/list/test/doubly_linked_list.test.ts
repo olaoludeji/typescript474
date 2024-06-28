@@ -1,6 +1,11 @@
 import { DoublyLinkedList } from '../doubly_linked_list'
 import { testLinkedList } from './linked_list'
 
+/**
+ * @description TestLinkedList implements unit tests for a `DoublyLinkedList` class
+ * by providing input values, calling its `reverse()` method, and asserting the results
+ * using `expect()`.
+ */
 describe('DoublyLinkedList', () => {
   testLinkedList(DoublyLinkedList)
 

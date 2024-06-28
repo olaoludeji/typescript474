@@ -1,5 +1,9 @@
 import { uglyNumbers } from '../ugly_numbers'
 
+/**
+ * @description Generates an array of numbers and maps them to a sequence of values
+ * returned by the `uglyNumbers()` function.
+ */
 test('Ugly Numbers', () => {
   const uglyNums = uglyNumbers()
   expect(

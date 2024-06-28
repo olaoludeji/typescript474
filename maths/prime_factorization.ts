@@ -1,10 +1,12 @@
 /**
- * @description Get exponenets of each prime number in factorization of a number n
- * @param {number} n - A natural number.
- * @return {Map<number, number>} - factorization of number n.
- * @see https://en.wikipedia.org/wiki/Integer_factorization
- * @example factorize(4) = Map {2 => 2}
- * @example factorize(5) = Map {5 => 1}
+ * @description Generates a map containing the number of times each prime factor
+ * occurs from 2 to the given integer `n`.
+ * 
+ * @param { number } n - 2-digit number whose prime factors are to be found and stored
+ * in the returned map.
+ * 
+ * @returns { Map<number, number> } a `Map` object containing the factors of the input
+ * number.
  */
 export const factorize = (n: number): Map<number, number> => {
   const result: Map<number, number> = new Map()

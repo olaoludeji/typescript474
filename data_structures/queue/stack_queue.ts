@@ -15,37 +15,37 @@ export class StackQueue<T> implements Queue<T> {
   private dequeueStack: Stack<T> = new Stack<T>()
 
   /**
-   * Returns the length of the Queue
-   *
-   * @returns {number} the length of the Queue
+   * @description Calculates the total length of the enqueued and dequeued items in a
+   * stack by adding the lengths of both queues.
+   * 
+   * @returns { number } the sum of the lengths of the `enqueueStack` and `dequeueStack`.
    */
   length(): number {
     return this.enqueueStack.length() + this.dequeueStack.length()
   }
 
   /**
-   * Checks if the queue is empty.
-   *
-   * @returns {boolean} Whether the queue is empty or not.
+   * @description Verifies if both the enqueued and dequeued stacks are empty, returning
+   * `true` if they are, and `false` otherwise.
+   * 
+   * @returns { boolean } a boolean indicating whether the stack is empty.
    */
   isEmpty(): boolean {
     return this.enqueueStack.isEmpty() && this.dequeueStack.isEmpty()
   }
 
   /**
-   * Adds an item to the queue.
-   * We always add a new item to the enqueueStack.
-   * @param item The item being added to the queue.
+   * @description Adds an item to a stack, pushing it onto the end of the stack.
+   * 
+   * @param { T } item - data that is being added to the enqueued stack in the `enqueue()`
+   * function.
    */
   enqueue(item: T): void {
     this.enqueueStack.push(item)
   }
 
   /**
-   * Shifts the elements from the enqueueStack to the dequeueStack
-   * In the worst case, all the elements from the enqueue stack needs to shifted, which needs O(n) time.
-   * However, after the shift, elements can de dequeued at O(1).
-   * This helps in dequeuing the elements in amortized O(1) time.
+   * @description Moves the last item from the `dequeueStack` to the top of the `enqueueStack`.
    */
   private shift(): void {
     while (!this.enqueueStack.isEmpty()) {
@@ -55,10 +55,10 @@ export class StackQueue<T> implements Queue<T> {
   }
 
   /**
-   * Removes an item from the queue and returns it.
-   *
-   * @throws Queue Underflow if the queue is empty.
-   * @returns The item that was removed from the queue.
+   * @description Retrieves and removes the front element from a queue, checking for
+   * underflow or empty stack first.
+   * 
+   * @returns { T } a value removed from the queue.
    */
   dequeue(): T {
     if (this.isEmpty()) {
@@ -73,9 +73,10 @@ export class StackQueue<T> implements Queue<T> {
   }
 
   /**
-   * Returns the item at the front of the queue.
-   *
-   * @returns The item at the front of the queue or null if the queue is empty.
+   * @description Retrieves and returns the top item from a queue's dequeue stack, while
+   * handling cases where the queue is empty or has no items left in the dequeue stack.
+   * 
+   * @returns { T | null } the top element of the dequeue stack.
    */
   peek(): T | null {
     if (this.isEmpty()) {

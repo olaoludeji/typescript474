@@ -1,5 +1,9 @@
 import { perfectCube } from '../perfect_cube'
 
+/**
+ * @description It.each([...]) tests the return value of `perfectCube(n)` against a
+ * given expectation for each input value in the array.
+ */
 describe('perfect cube tests', () => {
   it.each([
     [27, true],

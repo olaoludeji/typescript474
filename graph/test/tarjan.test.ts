@@ -1,5 +1,10 @@
 import { tarjan } from '../tarjan'
 
+/**
+ * @description Performs Tarjan's algorithm to calculate Strongly Connected Components
+ * (SCCs) of a given graph. It takes an input graph as an array of nodes, recursively
+ * traverses the graph, and returns an array of SCCs.
+ */
 describe('tarjan', () => {
   it('it should return no sccs for empty graph', () => {
     expect(tarjan([])).toStrictEqual([])

@@ -1,5 +1,9 @@
 import { gnomeSort } from '../gnome_sort'
 
+/**
+ * @description Evaluates whether `gnomeSort` correctly sorts an array of numbers
+ * according to the given test cases.
+ */
 describe('Testing Gnome sort', () => {
   const testCases: number[][] = [
     [],

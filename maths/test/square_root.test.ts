@@ -1,5 +1,10 @@
 import { squareRoot } from '../square_root'
 
+/**
+ * @description Tests the behavior of the `squareRoot` function by providing various
+ * input numbers and checking if the output is close to the correct value, either
+ * rational or irrational, depending on the number's sign and magnitude.
+ */
 describe('squareRoot', () => {
   test.each([-1, -10, -2.4])(
     'should throw an error for negative numbers',

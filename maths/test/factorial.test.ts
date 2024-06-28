@@ -1,5 +1,9 @@
 import { factorial } from '../factorial'
 
+/**
+ * @description Tests the `factorial` function by providing various inputs and verifying
+ * the output using `expect`.
+ */
 describe('factorial', () => {
   test.each([-0.1, -1, -2, -42, 0.01, 0.42, 0.5, 1.337])(
     'should throw an error for non natural number %d',

@@ -1,5 +1,9 @@
 import { sieveOfEratosthenes } from '../sieve_of_eratosthenes'
 
+/**
+ * @description Tests the `sieveOfEratosthenes` function by providing different inputs
+ * and verifying the expected outputs using `expect()` statements.
+ */
 describe('Sieve of Eratosthenes', () => {
   test.each([-2, 0.1, -0.01, 2.2])(
     'should throw a error for non natural number',

@@ -2,6 +2,16 @@ import { LinkedList } from '../linked_list'
 
 type LinkedListConstructor = new <T>() => LinkedList<T>
 
+/**
+ * @description Tests the LinkedList data structure, covering various scenarios such
+ * as initializing an empty list or a filled list, and performing operations like
+ * pushing, popping, getting, removing tail, inserting at index, clearing, converting
+ * to array, and checking length.
+ * 
+ * @param { LinkedListConstructor } LinkedList - LinkedList to be tested for various
+ * functionalities, providing a blank LinkedList for the first set of tests and an
+ * already populated LinkedList for the second set of tests.
+ */
 export function testLinkedList(LinkedList: LinkedListConstructor) {
   describe('with filled list (push)', () => {
     let list: LinkedList<number> = new LinkedList<number>()

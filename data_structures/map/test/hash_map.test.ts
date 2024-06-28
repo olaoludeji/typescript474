@@ -1,5 +1,10 @@
 import { HashMap } from '../../map/hash_map'
 
+/**
+ * @description Tests various features of a `Hash Map`. It creates a new `HashMap`
+ * before each test, sets values and retrieves them using the `set`, `get`, `has`,
+ * `delete`, `size`, `keys()`, `values()`, `entries()` methods.
+ */
 describe('Hash Map', () => {
   let hashMap: HashMap<string, number>
   beforeEach(() => {
