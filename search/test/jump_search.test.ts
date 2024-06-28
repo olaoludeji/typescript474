@@ -1,5 +1,10 @@
 import { jumpSearch } from '../jump_search'
 
+/**
+ * @description Tests the `jumpSearch` function by providing different input arrays
+ * and searching for a target value within them. It asserts that the resulting index
+ * matches the expected result using `toStrictEqual`.
+ */
 describe('Jump search', () => {
   test.each([
     [[], 1, -1],

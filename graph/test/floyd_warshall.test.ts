@@ -1,5 +1,9 @@
 import { floydWarshall } from '../floyd_warshall'
 
+/**
+ * @description Generates high-quality documentation for given code, using a structured
+ * approach to ensure consistency and clarity.
+ */
 describe('floydWarshall', () => {
   it('should return the correct value for zero element graph', () => {
     expect(floydWarshall([])).toEqual([])

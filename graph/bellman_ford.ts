@@ -1,13 +1,18 @@
 /**
- * @function bellmanFord
- * @description Compute the shortest path from a source node to all other nodes. If there is negative weight cycle, returns undefined. The input graph is in adjacency list form. It is a multidimensional array of edges. graph[i] holds the edges for the i'th node. Each edge is a 2-tuple where the 0'th item is the destination node, and the 1'th item is the edge weight.
- * @Complexity_Analysis
- * Time complexity: O(E*V)
- * Space Complexity: O(V)
- * @param {[number, number][][]} graph - The graph in adjacency list form
- * @param {number} start - The source node
- * @return {number[] | undefined} - The shortest path to each node, undefined if there is negative weight cycle
- * @see https://en.wikipedia.org/wiki/Bellman%E2%80%93Ford_algorithm
+ * @description Calculates shortest path between start node and all other nodes in a
+ * graph by iteratively computing paths that consist of at most V nodes, using
+ * Dijkstra's algorithm, and checking for negative weight cycles.
+ * 
+ * @param { [number, number][][] } graph - 2D grid of integers, where each integer
+ * corresponds to a node in the graph, and the values between nodes represent the
+ * weight of edges between them.
+ * 
+ * @param { number } start - starting node of the shortest path search, and it is
+ * used to initialize the distances array with the distance of the start node set to
+ * 0.
+ * 
+ * @returns { number[] | undefined } an array of shortest paths from the start node
+ * to all other nodes in the graph, with infinity values indicating unreachable nodes.
  */
 export const bellmanFord = (
   graph: [number, number][][],

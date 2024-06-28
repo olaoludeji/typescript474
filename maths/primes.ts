@@ -1,10 +1,12 @@
 /**
- * Implementation of the Sieve of Eratosthenes algorithm.
- *
- * @param limit An integer _n_ > 1
- * @returns All prime numbers from 2 through {@link limit}
- *
- * @see https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes
+ * @description Creates an array of prime numbers up to a given limit by iteratively
+ * marking as composite (i.e., not prime) the multiples of each prime number, starting
+ * with 2. The remaining unmarked numbers in the array are the prime numbers.
+ * 
+ * @param { number } limit - maximum value that the sieve should search for prime
+ * numbers up to, and it must be an integer greater than 1.
+ * 
+ * @returns { number[] } an array of prime numbers within the provided range.
  */
 export function sieveOfEratosthenes(limit: number): number[] {
   if (!Number.isInteger(limit) || limit <= 1) {
@@ -59,13 +61,13 @@ export function* primeGenerator() {
 }
 
 /**
- * @function isPrime
- * @description Determine if given number is prime.
- * @param {number} num - A natural number.
- * @return {boolean} - Whether the given number is prime.
- * @see https://en.wikipedia.org/wiki/Prime_number
- * @example isPrime(2) = false
- * @example isPrime(3) = true
+ * @description Verifies whether a given number is prime or not by iterating through
+ * the numbers from 2 to the square root of the input, checking for any factors. If
+ * no factor is found, it returns true; otherwise, it returns false.
+ * 
+ * @param { number } num - integer value for which the function checks if it is a square.
+ * 
+ * @returns { boolean } a boolean indicating whether the input number is prime.
  */
 export const isPrime = (num: number): boolean => {
   // raise corresponding errors upon invalid inputs

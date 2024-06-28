@@ -25,6 +25,10 @@ const cases: TestCase[] = [
   }
 ]
 
+/**
+ * @description Tests the `coinChange` function by providing various inputs and
+ * verifying the output using `expect`.
+ */
 describe('Coin Change Algorithm Test', () => {
   test.each(cases)(
     'given money: $money, and coins: $coins the minimum coin change should return $expected',

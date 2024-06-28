@@ -16,15 +16,19 @@ export class LinkedQueue<T> implements Queue<T> {
   public head?: Node<T>
   private tail?: Node<T>
 
+  /**
+   * @description Sets `head`, `tail`, and `size` to `undefined`.
+   */
   constructor() {
     this.head = this.tail = undefined
     this.size = 0
   }
 
   /**
-   * Adds an item to the queue.
-   *
-   * @param item The item being added to the queue.
+   * @description Updates a queue by adding an item to its end and assigning the new
+   * tail pointer to the node created.
+   * 
+   * @param { T } item - value to be enqueued in the queue.
    */
   enqueue(item: T): void {
     const node = { value: item } as Node<T> // Creates a new node
@@ -39,10 +43,10 @@ export class LinkedQueue<T> implements Queue<T> {
   }
 
   /**
-   * Removes an item from the queue and returns it.
-   *
-   * @throws Queue Underflow if the queue is empty.
-   * @returns The item that was removed from the queue.
+   * @description Retrieves and returns the value stored at the front of a queue while
+   * also updating the size of the queue and the head pointer to the next node.
+   * 
+   * @returns { T | undefined } the value of the head node of the queue.
    */
   dequeue(): T | undefined {
     if (!this.head) {
@@ -56,9 +60,11 @@ export class LinkedQueue<T> implements Queue<T> {
   }
 
   /**
-   * Returns the item at the front of the queue.
-   *
-   * @returns The item at the front of the queue or null if the queue is empty.
+   * @description Retrieves and returns the value associated with the head of a given
+   * Linked List, while checking if the list is empty or the head is null first.
+   * 
+   * @returns { T | undefined | null } the value of the head element of a collection,
+   * or `undefined` if the collection is empty.
    */
   peek(): T | undefined | null {
     if (this.isEmpty()) {
@@ -68,18 +74,20 @@ export class LinkedQueue<T> implements Queue<T> {
   }
 
   /**
-   * Checks if the queue is empty.
-   *
-   * @returns {boolean} Whether the queue is empty or not.
+   * @description Evaluates if an object has no properties or a size of 0. It returns
+   * `true` when the size is 0 and `false` otherwise.
+   * 
+   * @returns { boolean } a `boolean` value indicating whether the collection is empty
+   * or not.
    */
   isEmpty(): boolean {
     return this.size === 0
   }
 
   /**
-   * Returns the number of items in the queue.
-   *
-   * @returns {number} The number of items in the queue.
+   * @description Returns the number of elements in the array represented by the object.
+   * 
+   * @returns { number } the size of the object.
    */
   length(): number {
     return this.size

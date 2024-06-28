@@ -1,12 +1,14 @@
 /**
- * @function tarjan
- * @description Given a graph, find the strongly connected components(SCC) in reverse topological order. A set of nodes form a SCC if there is a path between all pairs of points within that set.
- * @Complexity_Analysis
- * Time complexity: O(V + E). We perform a DFS of (V + E)
- * Space Complexity: O(V). We hold numerous structures all of which at worst holds O(V) nodes.
- * @param {[number, number][][]} graph - The graph in adjacency list form
- * @return {number[][]} - An array of SCCs, where an SCC is an array with the indices of each node within that SCC. The order of SCCs in the array are in reverse topological order.
- * @see https://en.wikipedia.org/wiki/Tarjan%27s_strongly_connected_components_algorithm
+ * @description Traverses a graph using Depth-First Search (DFS). It maintains
+ * discovery, low, and stack variables to identify strongly connected components
+ * (SCCs) by recursively exploring the graph from the starting node. The function
+ * returns an array of SCCs, each consisting of nodes and their ancestors.
+ * 
+ * @param { number[][] } graph - 2D array of nodes and edges to be traversed and
+ * grouped into strong connected components (SCCs) by the `dfs` function.
+ * 
+ * @returns { number[][] } an array of arrays, where each inner array represents a
+ * strongly connected component (SCC) of the input graph.
  */
 export const tarjan = (graph: number[][]): number[][] => {
   if (graph.length === 0) {
@@ -24,6 +26,16 @@ export const tarjan = (graph: number[][]): number[][] => {
   const stackContains = Array(graph.length).fill(false)
   const sccs: number[][] = []
 
+  /**
+   * @description Explores a directed graph from a given node by traversing its neighbors,
+   * updates low and discovery values for each node, and detects if a node is a root
+   * of a strong connected component (SCC). It also gathers SCCs found during the exploration.
+   * 
+   * @param { number } node - current node being processed in the depth-first search,
+   * and its value is used to update the `low` and `discovery` arrays, as well as to
+   * determine if the node is the root of a separate connected component (SCC) during
+   * the recursive traversal.
+   */
   const dfs = (node: number) => {
     discovery[node] = index
     low[node] = index

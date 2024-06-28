@@ -1,5 +1,11 @@
 import { treeSort } from '../tree_sort'
 
+/**
+ * @description Expects an array `input` and an array `expected`. It calls `treeSort`
+ * on the input array, and then compares the resulting array with the expected output
+ * using `toEqual()`. If they are not equal, it fails with a message indicating the
+ * discrepancy.
+ */
 describe('TreeSort (numbers)', () => {
   it.each([
     { input: [], expected: [] },
@@ -16,6 +22,10 @@ describe('TreeSort (numbers)', () => {
   })
 })
 
+/**
+ * @description Takes an array of strings as input and uses `treeSort` to sort them.
+ * It then checks if the sorted output matches the expected output using `toEqual`.
+ */
 describe('TreeSort (strings)', () => {
   it.each([
     {
@@ -27,6 +37,10 @@ describe('TreeSort (strings)', () => {
   })
 })
 
+/**
+ * @description Tests if the `treeSort` function sorts an array of dates correctly
+ * for different inputs.
+ */
 describe('TreeSort (dates)', () => {
   it.each([
     {

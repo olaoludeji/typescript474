@@ -1,5 +1,8 @@
 import { HexagonalNumbers } from '../hexagonal_numbers'
 
+/**
+ * @description Returns an array of hexagonal numbers based on a given input value.
+ */
 describe('HexagonalNumbers', () => {
   it('should return the first 10 hexagonal numbers', () => {
     expect(HexagonalNumbers(10)).toStrictEqual([

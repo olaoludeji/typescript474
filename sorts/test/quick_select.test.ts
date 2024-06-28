@@ -1,5 +1,11 @@
 import { QuickSelect } from '../quick_select'
 
+/**
+ * @description Implements a fast and efficient implementation of the `QuickSelect`
+ * algorithm for finding the kth smallest element in an array, capable of handling
+ * arrays of various sizes and shapes, with correct behavior when the index `k` is
+ * out of bounds.
+ */
 describe('QuickSelect', () => {
   test('should return the kth smallest element in an array', () => {
     const array = [8, 3, 5, 1, 4, 2]

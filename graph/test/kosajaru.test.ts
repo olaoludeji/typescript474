@@ -1,5 +1,10 @@
 import { kosajaru } from '../kosajaru'
 
+/**
+ * @description Generates high-quality documentation for given code by providing the
+ * number of strongly connected components (SCCs) in a graph represented as an array
+ * of integers.
+ */
 describe('kosajaru', () => {
   it('it should return no sccs for empty graph', () => {
     expect(kosajaru([])).toStrictEqual([])

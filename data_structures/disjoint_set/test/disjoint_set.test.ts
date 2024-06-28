@@ -1,5 +1,9 @@
 import { DisjointSet } from '../disjoint_set'
 
+/**
+ * @description Creates a new `DisjointSet` instance before each test, performs joins
+ * on the elements, and asserts that the head element after join is the same as expected.
+ */
 describe('DisjointSet', () => {
   let ds: DisjointSet
 

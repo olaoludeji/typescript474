@@ -18,20 +18,25 @@ export class DoublyLinkedList<T> implements LinkedList<T> {
   private length: number = 0
 
   /**
-   * Checks if the list is empty.
-   *
-   * @returns {boolean} Whether the list is empty or not.
+   * @description Checks if a linked list is empty by returning `true` if the head of
+   * the list is null or not set, and `false` otherwise.
+   * 
+   * @returns { boolean } a boolean value indicating whether the list is empty or not.
    */
   isEmpty(): boolean {
     return !this.head
   }
 
   /**
-   * Gets a value of a node at a specific index.
-   * Time complexity: O(n)
-   *
-   * @param index The index of the node.
-   * @returns The value of a node at the specified index.
+   * @description Retrieves a value from a doubly linked list at a given index, returning
+   * `null` if the index is out of bounds or the value cannot be found.
+   * 
+   * @param { number } index - 0-based index of the node within the Doubly Linked List
+   * that the function should return, with values ranging from 0 to the length of the
+   * list - 1.
+   * 
+   * @returns { T | null } the value of the node at the specified index, or `null` if
+   * the index is out of range.
    */
   get(index: number): T | null {
     if (index < 0 || index >= this.length) {
@@ -47,10 +52,11 @@ export class DoublyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Inserts a node at the head of the list.
-   * Time complexity: O(1)
-   *
-   * @param value The value of the node being inserted.
+   * @description Adds a new node to a doubly linked list, updating the links between
+   * nodes as necessary.
+   * 
+   * @param { T } value - value that is added to the list at the current position, and
+   * it is used to initialize the newly created node's `value` field.
    */
   push(value: T): void {
     const newNode = new DoublyLinkedListNode(value)
@@ -68,11 +74,10 @@ export class DoublyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Removes a node from the head of the list.
-   * Time complexity: O(1)
-   *
-   * @returns The value of the node that was removed.
-   * @throws Index out of bounds if the list is empty.
+   * @description Removes and returns the last node from a singly linked list, handling
+   * edge cases such as an empty list or a list with only one node.
+   * 
+   * @returns { T } a value of type T.
    */
   pop(): T {
     if (!this.head) {
@@ -94,10 +99,10 @@ export class DoublyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Inserts a node at the tail of the list.
-   * Time complexity: O(1)
-   *
-   * @param value The value of the node being inserted.
+   * @description Modifies a doubly linked list by adding a new node at the end,
+   * maintaining proper linkage between nodes.
+   * 
+   * @param { T } value - value that is added to the end of the doubly linked list.
    */
   append(value: T): void {
     const newNode = new DoublyLinkedListNode(value)
@@ -114,11 +119,10 @@ export class DoublyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Removes a node from the tail of the list.
-   * Time complexity: O(1)
-   *
-   * @returns The value of the node that was removed.
-   * @throws Index out of bounds if the list is empty.
+   * @description Removes the tail node of a linked list, updating the head and length
+   * pointers accordingly.
+   * 
+   * @returns { T } a value reference of the removed node.
    */
   removeTail(): T {
     if (!this.head) {
@@ -140,12 +144,13 @@ export class DoublyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Inserts a node at a specific index.
-   * Time complexity: O(n)
-   *
-   * @param index The index where the node will be inserted.
-   * @param value The value of the node being inserted.
-   * @throws Index out of bounds if the index is not valid.
+   * @description Inserts an element at a given index in a doubly linked list, checking
+   * the index for validity and adjusting the links between nodes accordingly.
+   * 
+   * @param { number } index - 0-based index of the position where the value should be
+   * inserted in the Doubly Linked List.
+   * 
+   * @param { T } value - value that is added to the list at the specified index.
    */
   insertAt(index: number, value: T): void {
     if (index < 0 || index > this.length) {
@@ -178,12 +183,14 @@ export class DoublyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Removes a node at a specific index.
-   * Time complexity: O(n)
-   *
-   * @param index The index of the node to be removed.
-   * @returns The value of the node that was removed.
-   * @throws Index out of bounds if the index is not valid.
+   * @description Removals an element from a doubly linked list at a specified index,
+   * handling out-of-bounds indexes and removing the node from the list while maintaining
+   * its linked structure.
+   * 
+   * @param { number } index - 0-based index of the node to be removed from the doubly
+   * linked list.
+   * 
+   * @returns { T } a value of type `T`.
    */
   removeAt(index: number): T {
     if (index < 0 || index >= this.length) {
@@ -211,10 +218,11 @@ export class DoublyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Reverses the list.
-   * Time complexity: O(n)
-   *
-   * @returns The reversed list or null if the list is empty.
+   * @description Reverse the Doubly Linked List, maintaining the links between nodes.
+   * It starts from the head node and moves towards the tail node, reversing the order
+   * of nodes while maintaining their links. The function returns the modified list.
+   * 
+   * @returns { DoublyLinkedList<T> | null } a doubly linked list with all nodes reversed.
    */
   reverse(): DoublyLinkedList<T> | null {
     if (!this.head) {
@@ -243,7 +251,8 @@ export class DoublyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Clears the list.
+   * @description Sets the `head`, `tail`, and `length` properties of a linked list to
+   * `undefined`.
    */
   clear(): void {
     this.head = undefined
@@ -252,9 +261,10 @@ export class DoublyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Converts the list to an array.
-   *
-   * @returns The array representation of the list.
+   * @description Converts a doubly linked list to an array. It iterates through the
+   * nodes of the list and pushes each node's value onto an array.
+   * 
+   * @returns { T[] } an array of the elements stored in the Doubly Linked List.
    */
   toArray(): T[] {
     const array: T[] = []
@@ -270,9 +280,9 @@ export class DoublyLinkedList<T> implements LinkedList<T> {
   }
 
   /**
-   * Gets the length of the list.
-   *
-   * @returns The length of the list.
+   * @description Retrieves the length of its underlying string value.
+   * 
+   * @returns { number } the length of the current array object.
    */
   getLength(): number {
     return this.length
@@ -288,6 +298,17 @@ export class DoublyLinkedList<T> implements LinkedList<T> {
  * @property prev The previous node before this node.
  */
 class DoublyLinkedListNode<T> {
+  /**
+   * @description Defines a class instance with initial value, next and previous nodes.
+   * 
+   * @param { T } value - data that will be stored as the node's value in the doubly
+   * linked list.
+   * 
+   * @param { DoublyLinkedListNode<T> } next - node that comes after the current node
+   * in the linked list.
+   * 
+   * @param { DoublyLinkedListNode<T> } prev - previous node in the linked list.
+   */
   constructor(
     public value: T,
     public next?: DoublyLinkedListNode<T>,

@@ -1,5 +1,10 @@
 import { insertionSort } from '../insertion_sort'
 
+/**
+ * @description Inserts items into a list in sorted order using the insertion sort
+ * algorithm, verifying that the result is correct for various cases involving different
+ * numbers and orders of input elements.
+ */
 describe('Insertion Sort', () => {
   it('should return the correct value for average case', () => {
     expect(insertionSort([8, 3, 5, 1, 4, 2])).toStrictEqual([1, 2, 3, 4, 5, 8])

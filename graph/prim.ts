@@ -1,13 +1,13 @@
 import { PriorityQueue } from '../data_structures/heap/heap'
 /**
- * @function prim
- * @description Compute a minimum spanning tree(MST) of a fully connected weighted undirected graph. The input graph is in adjacency list form. It is a multidimensional array of edges. graph[i] holds the edges for the i'th node. Each edge is a 2-tuple where the 0'th item is the destination node, and the 1'th item is the edge weight.
- * @Complexity_Analysis
- * Time complexity: O(Elog(V))
- * Space Complexity: O(V)
- * @param {[number, number][][]} graph - The graph in adjacency list form
- * @return {Edge[], number} - [The edges of the minimum spanning tree, the sum of the weights of the edges in the tree]
- * @see https://en.wikipedia.org/wiki/Prim%27s_algorithm
+ * @description Generates a minimum spanning tree for an undirected graph and returns
+ * it as an array of edges and the total weight of the tree.
+ * 
+ * @param { [number, number][][] } graph - 2D graph consisting of edges and vertices,
+ * which is used to calculate the minimum spanning tree of the graph.
+ * 
+ * @returns { [Edge[], number] } a pair of values: an array of edges that form a
+ * minimum spanning tree and the total weight of the tree.
  */
 export const prim = (graph: [number, number][][]): [Edge[], number] => {
   if (graph.length == 0) {
@@ -16,6 +16,23 @@ export const prim = (graph: [number, number][][]): [Edge[], number] => {
   const minimum_spanning_tree: Edge[] = []
   let total_weight = 0
 
+  /**
+   * @description Takes a `b` argument and returns it directly.
+   * 
+   * @param { Edge } e - edge of a shape.
+   * 
+   * @returns { boolean } `b`.
+   */
+  /**
+   * @description Compares the `weight` properties of two objects `a` and `b`, and
+   * returns `true` if `a.weight` is less than `b.weight`, otherwise returns `false`.
+   * 
+   * @param { Edge } a - first object in the comparison.
+   * 
+   * @param { Edge } b - 2nd element of the array to compare the weight of.
+   * 
+   * @returns { number } a boolean value indicating whether `a.weight` is less than `b.weight`.
+   */
   const priorityQueue = new PriorityQueue(
     (e: Edge) => {
       return e.b
@@ -46,6 +63,21 @@ export const prim = (graph: [number, number][][]): [Edge[], number] => {
   return [minimum_spanning_tree, total_weight]
 }
 
+/**
+ * @description Iterates through the children of a given node in a graph, increasing
+ * the priority of each edge leading to a neighboring node in the queue to ensure it
+ * is only added once.
+ * 
+ * @param { [number, number][][] } graph - 2D graph consisting of nodes and edges,
+ * where each node is associated with an array of adjacent edges, and the function
+ * processes each node's adjacency list once to generate the priority queue.
+ * 
+ * @param { PriorityQueue<Edge> } priorityQueue - queue of edges to be processed, and
+ * it is used to prioritize the edges based on their weights to ensure that each
+ * vertex is visited only once during the shortest path computation.
+ * 
+ * @param { number } node - node for which the neighboring vertices are to be found.
+ */
 const add_children = (
   graph: [number, number][][],
   priorityQueue: PriorityQueue<Edge>,
@@ -65,6 +97,17 @@ export class Edge {
   a: number = 0
   b: number = 0
   weight: number = 0
+  /**
+   * @description Initializes an object with `a`, `b`, and `weight` properties, assigning
+   * values to each property from the function arguments.
+   * 
+   * @param { number } a - initial value of the object's `a` field.
+   * 
+   * @param { number } b - 2nd input value to the constructor function.
+   * 
+   * @param { number } weight - mass of the object being constructed and is used in the
+   * calculation of the object's total mass.
+   */
   constructor(a: number, b: number, weight: number) {
     this.a = a
     this.b = b

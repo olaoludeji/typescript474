@@ -1,5 +1,9 @@
 import { isPowerOfFour } from '../is_power_of_4'
 
+/**
+ * @description Iven the input `n`, checks if `n` is a power of 4 using the `isPowerOfFour`
+ * function.
+ */
 describe('IsPowerOfFour', () => {
   it.each([
     [0, false],

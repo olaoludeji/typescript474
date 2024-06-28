@@ -73,6 +73,10 @@ const cases: [number, string[]][] = [
   ]
 ]
 
+/**
+ * @description Generates high-quality documentation for given code by testig each
+ * case with a specific input and expected output.
+ */
 describe('Generate Parentheses', () => {
   test.each(cases)(
     'generate all valid parentheses of input %n',

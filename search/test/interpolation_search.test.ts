@@ -1,5 +1,10 @@
 import { interpolationSearch } from '../interpolation_search'
 
+/**
+ * @description Expects an array, a target value, and an index. It uses `interpolationSearch()`
+ * to find the index of the target value in the array and then expect it to be equal
+ * to the inputted index.
+ */
 describe('Interpolation search', () => {
   test.each([
     [[1, 3, 5, 7, 9, 11], 1, 0],

@@ -1,5 +1,10 @@
 import { isLeapYear } from '../is_leap_year'
 
+/**
+ * @description Tests 10 different inputs for their leap year status, checking if
+ * they are divisible by 4 or 400 using `isLeapYear()`. If the input is not a natural
+ * number greater than 0, it throws an error.
+ */
 describe('isLeapYear', () => {
   test.each([4, 8, 12, 2004])(
     'a year is a leap year it is divisible by 4 but not by 400 like %i',

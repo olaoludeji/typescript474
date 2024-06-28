@@ -1,8 +1,9 @@
 /**
- * Solves a system of linear equations using Gaussian Elimination with partial pivoting.
- *
- * @param {number[][]} matrix - The augmented matrix representing the system of equations.
- * @returns {number[]} An array representing the solutions to the equations.
+ * @description Performs Gaussian elimination on a given matrix, performing partial
+ * pivots and back substitution to reduce the matrix to row echelon form.
+/**
+ * @description Performs a backsubstitution for each row in an input matrix, updating
+ * the values of the corresponding elements in an output matrix.
  */
 export function gaussianElimination(matrix: number[][]): number[] {
   const result: number[] = new Array(matrix.length)

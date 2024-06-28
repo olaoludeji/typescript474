@@ -4,6 +4,11 @@ import {
   naiveLCM
 } from '../lowest_common_multiple'
 
+/**
+ * @description Tests three properties of a naive implementation of the lowest common
+ * multiple (LCM) algorithm: correctness, acceptance of positive numbers only, and
+ * requirement of at least one number input.
+ */
 describe('naiveLCM', () => {
   test.each([
     [[3, 4], 12],
@@ -27,6 +32,11 @@ describe('naiveLCM', () => {
   })
 })
 
+/**
+ * @description Tests the `binaryLCM` function by providing various inputs and verifying
+ * the output using `expect`. The function also checks for invalid inputs, such as
+ * non-integer numbers or negative values, and throws an error when encountered.
+ */
 describe('binaryLCM', () => {
   test.each([
     [3, 4, 12],
@@ -48,6 +58,11 @@ describe('binaryLCM', () => {
   })
 })
 
+/**
+ * @description Tests the `lowestCommonMultiple()` function, providing inputs of pairs
+ * of numbers and verifying that the output is correct, only positive numbers are
+ * accepted, and at least one number is passed in.
+ */
 describe('lowestCommonMultiple', () => {
   test.each([
     [[3, 4], 12],

@@ -1,5 +1,10 @@
 import { findMin } from '../find_min'
 
+/**
+ * @description Finds the minimum value in an array. It takes an array and an expected
+ * value as arguments, and tests whether the found minimum matches the expected value.
+ * If the array has a length of 0, it throws an error.
+ */
 describe('findMin', () => {
   test.each([
     [[1, 2, 3, 4, 5, 6], 1],

@@ -1,5 +1,9 @@
 import { Stack } from '../stack'
 
+/**
+ * @description Tests various methods of a `Stack` data structure, including `push`,
+ * `isEmpty`, `top`, `length`, and `pop`.
+ */
 describe('Testing Stack data structure', () => {
   it('push should add a new element to the stack', () => {
     const stack = new Stack<number>()

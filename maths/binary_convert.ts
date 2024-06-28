@@ -1,13 +1,16 @@
 /**
- * @function binaryConvert
- * @description Convert the decimal to binary.
- * @param {number} num - The input integer
- * @return {string} - Binary of num.
- * @see [BinaryConvert](https://www.programiz.com/javascript/examples/decimal-binary)
- * @example binaryConvert(12) = 1100
- * @example binaryConvert(12 + 2) = 1110
+/**
+ * @description Takes a number as input and returns its binary representation as a
+ * string, computed by iteratively multiplying the number by 2, taking the remainder,
+ * and adding it to the resulting binary representation until the number is 0.
+ * 
+ * @param { number } num - binary number being generated, which is calculated by
+ * iteratively adding a digit based on the remainder of `num` divided by 2 until `num`
+ * is zero.
+ * 
+ * @returns { string } a string representation of the binary equivalent of the given
+ * number.
  */
-
 export const binaryConvert = (num: number): string => {
   let binary = ''
 

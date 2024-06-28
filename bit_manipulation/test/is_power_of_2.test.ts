@@ -1,5 +1,10 @@
 import { isPowerOfTwo } from '../is_power_of_2'
 
+/**
+ * @description Takes an array of pairs `it.each` and a callback function that checks
+ * whether the parameter is a power of 2 using `isPowerOfTwo`. The callback expects
+ * the result to be boolean.
+ */
 describe('IsPowerOfTwo', () => {
   it.each([
     [0, false],

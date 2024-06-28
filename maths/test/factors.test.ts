@@ -1,5 +1,9 @@
 import { findFactors } from '../factors'
 
+/**
+ * @description Test's input arrays of numbers and expectations for factor sets
+ * returned by `findFactors()`.
+ */
 describe('findFactors', () => {
   test.each([-890, -5.56, -7, 0, 0.73, 4.2, NaN, -Infinity, Infinity])(
     'should throw an error for non natural number %d',

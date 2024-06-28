@@ -1,11 +1,12 @@
 /**
- * @function isEven
- * @description Determine whether a number is even.
- * @param {Number} num - A number.
- * @return {Boolean} - Whether the given number is even.
- * @see https://en.wikipedia.org/wiki/Parity_(mathematics)
- * @example isEven(1) = false
- * @example isEven(2) = true
+ * @description Checks whether a given number is even by performing a modulo operation
+ * with `2`. It throws an error if the input is not an integer. If the result of the
+ * modulo is zero, then the number is even; otherwise, it is odd.
+ * 
+ * @param { number } num - number passed to the function, which is tested for whether
+ * it can be divided by 2 with no remainders.
+ * 
+ * @returns { boolean } a boolean indicating whether the input number is even.
  */
 export const isEven = (num: number): boolean => {
   if (!Number.isInteger(num)) {

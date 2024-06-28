@@ -1,15 +1,22 @@
 import { partition } from './quick_sort'
 /**
- * @function QuickSelect
- * @description is an algorithm based on the QuickSort approach that selects the kth smallest element from an array
- * @param {number[]} array - The array from which to select the element
- * @param {number} k - The index representing the kth smallest element to find
- * @param {number} left - The left boundary of the array or subarray to consider (default: 0)
- * @param {number} right - The right boundary of the array or subarray to consider (default: array.length - 1)
- * @returns {number} - The kth smallest element from the array
- * @throws {Error} - If k is out of bounds (less than 0 or greater than or equal to array.length)
+/**
+ * @description Partitions an array and finds the k-th element using a divide-and-conquer
+ * approach. It first checks if the index is within bounds, then it performs partitioning
+ * and recursively calls itself to find the desired element.
+ * 
+ * @param { number[] } array - 0-indexed list that is being sorted using QuickSelect.
+ * 
+ * @param { number } k - 0-based index of the element to be selected from the array.
+ * 
+ * @param { number } left - 0-based index of the starting position for partitioning
+ * the array.
+ * 
+ * @param { number } right - 2nd to last index of the array.
+ * 
+ * @returns { number } the selected element from the given array based on the provided
+ * index `k`.
  */
-
 export const QuickSelect = (
   array: number[],
   k: number,

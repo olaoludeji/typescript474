@@ -1,5 +1,9 @@
 import { isSortedArray } from '../is_sorted_array'
 
+/**
+ * @description Tests whether an array is sorted by passing it to `isSortedArray()`
+ * and comparing the result to the expected value.
+ */
 describe('isSortedArray', () => {
   test.each([
     { arr: [100], expected: true },

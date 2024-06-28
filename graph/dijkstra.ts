@@ -1,14 +1,19 @@
 import { MinHeap, PriorityQueue } from '../data_structures/heap/heap'
 /**
- * @function dijkstra
- * @description Compute the shortest path from a source node to all other nodes. The input graph is in adjacency list form. It is a multidimensional array of edges. graph[i] holds the edges for the i'th node. Each edge is a 2-tuple where the 0'th item is the destination node, and the 1'th item is the edge weight.
- * @Complexity_Analysis
- * Time complexity: O((V+E)*log(V)). For fully connected graphs, it is O(E*log(V)).
- * Space Complexity: O(V)
- * @param {[number, number][][]} graph - The graph in adjacency list form
- * @param {number} start - The source node
- * @return {number[]} - The shortest path to each node
- * @see https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm
+ * @description Uses a priority queue to find the shortest distance between a starting
+ * node and all other nodes in a graph, taking into account the weights of the
+ * connections between nodes. It returns an array of distances from the start node
+ * to each node in the graph.
+ * 
+ * @param { [number, number][][] } graph - 2D grid of vertices and edges, which is
+ * used to compute the shortest distance from the starting vertex to all other vertices
+ * in the graph.
+ * 
+ * @param { number } start - starting vertex for the shortest path calculation and
+ * is used to initialize the priority queue with the distance of the start vertex.
+ * 
+ * @returns { number[] } an array of distances from the start node to all other nodes
+ * in the graph, where each distance is represented as a number.
  */
 export const dijkstra = (
   graph: [number, number][][],
@@ -16,6 +21,24 @@ export const dijkstra = (
 ): number[] => {
   // We use a priority queue to make sure we always visit the closest node. The
   // queue makes comparisons based on path weights.
+  /**
+   * @description Selects and returns the first element of an array `a`.
+   * 
+   * @param { [number, number] } a - 1st element of an array passed to the function.
+   * 
+   * @returns { number } the first element of the `a` array passed to it.
+   */
+  /**
+   * @description Compares two arrays `a` and `b` and returns `True` if the first element
+   * of `a` is less than the first element of `b`, otherwise it returns `False`.
+   * 
+   * @param { [number, number] } a - 1st element of an array.
+   * 
+   * @param { [number, number] } b - 2nd number to be compared with the 1st number of
+   * the `a` array for determining which number is smaller.
+   * 
+   * @returns { boolean } `true`.
+   */
   const priorityQueue = new PriorityQueue(
     (a: [number, number]) => {
       return a[0]

@@ -1,6 +1,23 @@
 import { dijkstra } from '../dijkstra'
 
+/**
+ * @description Calculates the shortest path from a given starting node to all other
+ * nodes in a weighted graph using Dijkstra's algorithm.
+ * 
+ * @returns { array } a list of integers representing the shortest path from the
+ * starting node to all other nodes in the graph.
+ */
 describe('dijkstra', () => {
+  /**
+   * @description Initializes an array of arrays with the given size, returning a
+   * two-dimensional array.
+   * 
+   * @param { number } N - dimensionality of the array to be generated, and it determines
+   * the size of each dimension in the resulting array.
+   * 
+   * @returns { [number, number][][] } an array of arrays with length `N`, where each
+   * inner array contains zero elements.
+   */
   const init_graph = (N: number): [number, number][][] => {
     const graph = Array(N)
     for (let i = 0; i < N; ++i) {
@@ -9,6 +26,20 @@ describe('dijkstra', () => {
     return graph
   }
 
+  /**
+   * @description Updates an adjacency matrix by adding an edge between two nodes with
+   * given weights.
+   * 
+   * @param { [number, number][][] } graph - 2D matrix of links between nodes, which
+   * is manipulated by pushing new edges onto it with the specified weights.
+   * 
+   * @param { number } a - node where the edge is added to the graph.
+   * 
+   * @param { number } b - 2nd vertex of the edge being added to the graph.
+   * 
+   * @param { number } weight - weight of each edge in the graph, which is used to
+   * update the graph structure by adding new edges and modifying existing ones.
+   */
   const add_edge = (
     graph: [number, number][][],
     a: number,

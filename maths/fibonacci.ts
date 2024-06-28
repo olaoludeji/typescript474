@@ -21,6 +21,17 @@ function* generateFibonacci(): Generator<number> {
   }
 }
 
+/**
+ * @description Takes an integer input `number`, and generates the `number`-th Fibonacci
+ * number. It first checks if the input is a number, non-negative integer, and if it
+ * is 0, returns 0. Otherwise, it uses a generator to generate the Fibonacci sequence
+ * up to the input value, and returns the `nth` term.
+ * 
+ * @param { number } number - non-negative integer for which the Fibonacci sequence
+ * up to that number is computed and returned by the function.
+ * 
+ * @returns { number } the `number`-th Fibonacci number.
+ */
 export const nthFibonacci = (number: number): number => {
   if (isNaN(number)) throw new Error('The input needs to be a number')
   if (!Number.isInteger(number) || number < 0)
@@ -39,16 +50,13 @@ export const nthFibonacci = (number: number): number => {
 }
 
 /**
- * A function to get nth Fibonacci number recursively. **Note: This recursive approach increases the time complexity**
- *
- * Time Complexity: exponential (O(ϕ^n))
- *
- * @param number The index of the number in the Fibonacci sequence.
- * @return The Fibonacci number on the nth index in the sequence.
- *
- * @example nthFibonacci(4) => 3 | nthFibonacci(6) => 8
- * @see https://en.m.wikipedia.org/wiki/Fibonacci_number
- * @author zFlxw <https://github.com/zFlxw>
+ * @description Calculates the `n`-th Fibonacci number recursively by calling itself
+ * with input values `n-1` and `n-2`.
+ * 
+ * @param { number } number - 3-digit number for which the Fibonacci sequence is to
+ * be calculated.
+ * 
+ * @returns { number } the nth Fibonacci number.
  */
 export const nthFibonacciRecursively = (number: number): number => {
   if (number === 0) {

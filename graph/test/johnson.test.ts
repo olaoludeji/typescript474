@@ -1,6 +1,23 @@
 import { johnson } from '../johnson'
 
+/**
+ * @description Performs Johnstons algorithm for computing shortest paths in a weighted
+ * graph, returning an array of arrays representing the shortest paths from each node
+ * to every other node in the graph.
+ * 
+ * @returns { array } a strictly typed, passive voice, and formal representation of
+ * the Johnson algorithm for determining the shortest paths in a graph.
+ */
 describe('johnson', () => {
+  /**
+   * @description Creates an array with `N` sub-arrays, each containing empty sub-arrays.
+   * It returns a complete graph representation as an array of arrays.
+   * 
+   * @param { number } N - number of rows or vertices in the graph.
+   * 
+   * @returns { [number, number][][] } an array of arrays, where each inner array
+   * represents a vertex in the graph.
+   */
   const init_graph = (N: number): [number, number][][] => {
     const graph = Array(N)
     for (let i = 0; i < N; ++i) {
@@ -9,6 +26,21 @@ describe('johnson', () => {
     return graph
   }
 
+  /**
+   * @description Adds an edge to a directed graph between two nodes represented by
+   * their indices, maintaining the adjacency list representation.
+   * 
+   * @param { [number, number][][] } graph - 2D array of nodes and weights for the
+   * graph, where each element of the array is a pair of node indices and edge weights.
+   * 
+   * @param { number } a - 0-based index of the node at which the function is called
+   * and is used to push new edges onto the graph with weight `weight`.
+   * 
+   * @param { number } b - 2nd vertex in the edge being added to the graph.
+   * 
+   * @param { number } weight - 0-based weight of each edge between nodes in the graph,
+   * which is used to update the adjacency list of the graph in the provided implementation.
+   */
   const add_edge = (
     graph: [number, number][][],
     a: number,

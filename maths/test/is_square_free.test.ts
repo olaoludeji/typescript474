@@ -1,5 +1,10 @@
 import { isSquareFree } from '../is_square_free'
 
+/**
+ * @description Tests whether a given number is square-free using `isSquareFree()`.
+ * It provides multiple inputs and asserts that they are either square-free or not
+ * using `toBe()`
+ */
 describe('isSquareFree', () => {
   test.each([1, 2, 3, 5, 7, 10, 26, 2 * 3, 3 * 5 * 7, 11 * 13 * 17 * 19])(
     '%i is square free',

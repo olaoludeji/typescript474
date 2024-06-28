@@ -2,14 +2,19 @@ import { bellmanFord } from './bellman_ford'
 import { dijkstra } from './dijkstra'
 
 /**
- * @function johnson
- * @description Compute the shortest path for all pairs of nodes. The input graph is in adjacency list form. It is a multidimensional array of edges. graph[i] holds the edges for the i'th node. Each edge is a 2-tuple where the 0'th item is the destination node, and the 1'th item is the edge weight. Returned undefined if the graph has negative weighted cycles.
- * @Complexity_Analysis
- * Time complexity: O(VElog(V))
- * Space Complexity: O(V^2) to hold the result
- * @param {[number, number][][]} graph - The graph in adjacency list form
- * @return {number[][]} - A matrix holding the shortest path for each pair of nodes. matrix[i][j] holds the distance of the shortest path (i -> j).
- * @see https://en.wikipedia.org/wiki/Johnson%27s_algorithm
+ * @description Takes a graph and returns an array of arrays, where each inner array
+ * represents a shortest path from the new node to all other nodes in the graph. It
+ * first creates a copy of the original graph, adds a new node with no edges, computes
+ * distances using Bellman-Ford, adjusts edge weights, and then computes Dijkstra's
+ * shortest paths for each node.
+ * 
+ * @param { [number, number][][] } graph - 2D graph, which is a 2D matrix of weighted
+ * edges between nodes, and the function computes distances from a new node to all
+ * existing nodes using the Bellman-Ford algorithm and then returns shortest paths
+ * from the new node to all other nodes in the graph.
+ * 
+ * @returns { number[][] | undefined } an array of shortest paths between all pairs
+ * of nodes in a weighted graph.
  */
 export const johnson = (
   graph: [number, number][][]

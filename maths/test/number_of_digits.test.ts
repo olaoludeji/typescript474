@@ -1,5 +1,9 @@
 import { numberOfDigits } from '../number_of_digits'
 
+/**
+ * @description Tests whether passing a non-natural number throws an error, and checks
+ * that passing a natural number returns its number of digits.
+ */
 describe('numberOfDigits', () => {
   test.each([-890, -5.56, -7, 0, 0.73, 4.2, NaN, -Infinity, Infinity])(
     'should throw an error for non natural number %d',

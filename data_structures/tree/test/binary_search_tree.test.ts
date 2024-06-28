@@ -1,5 +1,10 @@
 import { BinarySearchTree } from '../binary_search_tree'
 
+/**
+ * @description Tests the functionality of a BinarySearchTree by providing various
+ * scenarios to test its features, such as testing if it is empty, searching for a
+ * specific node, and traversing through the tree in different orders.
+ */
 describe('BinarySearchTree', () => {
   describe('with filled binary search tree (insert)', () => {
     let binarySearchTree: BinarySearchTree<number>

@@ -1,5 +1,9 @@
 import { isOdd } from '../is_odd'
 
+/**
+ * @description Tests whether a given number is odd or even by checking if it satisfies
+ * a certain condition, and reports an error message when passed an non-integer value.
+ */
 describe('isOdd', () => {
   test.each([
     [2, false],

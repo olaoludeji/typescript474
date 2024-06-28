@@ -1,5 +1,15 @@
 import { bellmanFord } from '../bellman_ford'
 
+/**
+ * @description Creates a 2D array with `N` rows and columns, initialize each row and
+ * column with an empty array, returning the initialized graph.
+ * 
+ * @param { number } N - 2D array size, defining the number of rows and columns in
+ * the generated graph.
+ * 
+ * @returns { [number, number][][] } an array of arrays, where each inner array
+ * contains a single element.
+ */
 const init_graph = (N: number): [number, number][][] => {
   const graph = Array(N)
   for (let i = 0; i < N; ++i) {
@@ -8,7 +18,27 @@ const init_graph = (N: number): [number, number][][] => {
   return graph
 }
 
+/**
+ * @description Performs Bellman-Ford algorithm for finding shortest path from source
+ * node to all other nodes in a weighted graph.
+ */
 describe('bellmanFord', () => {
+  /**
+   * @description Updates a graph's adjacency matrix by adding an edge between two
+   * vertices with given weight.
+   * 
+   * @param { [number, number][][] } graph - 2D adjacency matrix of a graph, where each
+   * array element in the matrix corresponds to an edge between two vertices, and the
+   * weight of the edge is provided as the second element in the array.
+   * 
+   * @param { number } a - 2-element index of a node in the graph to which the weighted
+   * edge is added.
+   * 
+   * @param { number } b - 2nd vertex in the weighted edge being added to the graph.
+   * 
+   * @param { number } weight - 0-based index of the edge in the graph, and determines
+   * how much the edge contributes to the overall weight of the graph.
+   */
   const add_edge = (
     graph: [number, number][][],
     a: number,
@@ -74,6 +104,11 @@ describe('bellmanFord', () => {
   )
 })
 
+/**
+ * @description Tests Bellman-Ford algorithm on directed graphs with negative cycles
+ * using `init_graph` and `bellmanFord`. It provides undefined results for inputs
+ * with negative cycles.
+ */
 describe('bellmanFord negative cycle graphs', () => {
   it('should returned undefined for 2-node graph with negative cycle', () => {
     const basic = init_graph(2)

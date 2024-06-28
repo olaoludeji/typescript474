@@ -13,6 +13,21 @@ function matrixMultiplication(matA: number[][], b: number[][]): number[][]
 function matrixMultiplication(matA: number[][], b: number): number[][]
 function matrixMultiplication(matA: number[][], b: number[]): number[]
 
+/**
+ * @description Takes two arguments: `matA` and `b`, where `matA` is a matrix of
+ * numbers and `b` can be either a scalar or another matrix. The function returns the
+ * result of multiplying `matA` by `b`, either as an array of arrays, a flat array,
+ * or `null` if the matrices are not compatible for multiplication.
+ * 
+ * @param { number[][] } matA - 2D array to be multiplied with the input `b`, which
+ * can be either a scalar or another 2D array.
+ * 
+ * @param { any } b - 2D array that is multiplied with each row of the 1D array `matA`,
+ * producing a new 2D array or `null`.
+ * 
+ * @returns { number[][] | number[] | null } an array of numbers representing the
+ * result of multiplying a matrix by a scalar.
+ */
 function matrixMultiplication(
   matA: number[][],
   b: any

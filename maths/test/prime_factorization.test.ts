@@ -33,6 +33,12 @@ const cases: TestCase[] = [
   }
 ]
 
+/**
+ * @description Performs an `each` test on a collection of test cases, where each
+ * case consists of an `n` value and an expected prime factorization. The function
+ * applies the `factorize()` function to the `n` value and compares the result to the
+ * expected value.
+ */
 describe('factorize', () => {
   test.each(cases)(
     'prime factorization of $n should be $expected',

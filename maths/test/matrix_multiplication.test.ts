@@ -1,5 +1,10 @@
 import { matrixMultiplication } from '../matrix_multiplication'
 
+/**
+ * @description Performs `it.each()` iterations over an array of arrays containing
+ * matrices, and then multiplies each matrix with another matrix using the
+ * `matrixMultiplication` function, which returns the expected result for each iteration.
+ */
 describe('Matrix-matrix multiplication', () => {
   it.each([
     [
@@ -69,6 +74,11 @@ describe('Matrix-matrix multiplication', () => {
   })
 })
 
+/**
+ * @description Is an iterator for testing matrix multiplication using `it.each`. It
+ * provides input arrays `[matA, scalar, expected]` to a test case expecting the
+ * result of multiplying `matA` by `scalar` to be equal to `expected`.
+ */
 describe('Matrix-scalar multiplication', () => {
   it.each([
     [
@@ -120,6 +130,11 @@ describe('Matrix-scalar multiplication', () => {
   })
 })
 
+/**
+ * @description Tests the `matrixMultiplication` function by providing different
+ * inputs and expected outputs, using `it.each` to run the test for each combination
+ * of input arrays.
+ */
 describe('Matrix-vector multiplication', () => {
   it.each([
     [

@@ -1,5 +1,10 @@
 import { isPrime, primeGenerator, sieveOfEratosthenes } from '../primes'
 
+/**
+ * @description Tests the `sieveOfEratosthenes` function by providing various limits
+ * and ensuring that it throws an error for invalid inputs or returns the expected
+ * list of primes for valid limits.
+ */
 describe(sieveOfEratosthenes, () => {
   test.each([-1, 0, 1, 2.123, 1337.80085])(
     'should throw an error when given an invalid limit=%d',
@@ -24,6 +29,11 @@ describe(sieveOfEratosthenes, () => {
   )
 })
 
+/**
+ * @description Tests the `primeGenerator()` function by iterating over a range and
+ * calling its `next()` method to generate prime numbers, verifying their primality
+ * using the `isPrime()` function.
+ */
 describe(primeGenerator, () => {
   it('should generate prime numbers', () => {
     const primeGen = primeGenerator()
@@ -39,6 +49,10 @@ describe(primeGenerator, () => {
   })
 })
 
+/**
+ * @description Tests whether a given number is prime using the `isPrime` function,
+ * and verifies that it throws an error when passed non-natural numbers.
+ */
 describe('IsPrime', () => {
   test.each([
     [1, false],

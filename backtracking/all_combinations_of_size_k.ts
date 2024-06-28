@@ -1,13 +1,22 @@
 /**
- * This generates an array of unique sub"sets" (represented by ascendingly sorted subarrays)
- * of size k out of n+1 numbers from 1 to n.
- *
- * By using a backtracking algorithm we can incrementally build sub"sets" while dropping candidates
- * that cannot contribute anymore to a valid solution.
- * Steps:
- * - From the starting number (i.e. "1") generate all combinations of k numbers.
- * - Once we got all combinations for the given number we can discard it (“backtracks”)
- *   and repeat the same process for the next number.
+ * @description Generates all possible combinations of a given number `n` of elements
+ * taken `k` at a time. It uses a recursive approach to generate the combinations and
+/**
+ * @description Takes three parameters: `n`, `k`, and `startCursor`. It generates all
+ * possible combinations of `k` elements from an array of size `n`, starting from the
+ * `startCursor`. The combinations are stored in an array `combinationsAcc`.
+ * 
+ * @param { number } n - total number of elements in the sequence for which combinations
+ * are to be generated.
+ * 
+ * @param { number } k - number of elements to be selected from a total pool of `n`
+ * elements in generating all possible combinations.
+ * 
+ * @param { number } startCursor - 0-based index of the first element to include in
+ * each combination.
+ * 
+ * @returns { number[][] } an array of all possible combinations of a given number
+ * of elements from a larger array.
  */
 export function generateCombinations(n: number, k: number): number[][] {
   const combinationsAcc: number[][] = []

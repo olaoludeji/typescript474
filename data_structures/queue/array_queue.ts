@@ -9,37 +9,39 @@ export class ArrayQueue<T> implements Queue<T> {
   private queue: T[] = []
 
   /**
-   * Returns the number of items in the queue.
-   *
-   * @returns {number} The number of items in the queue.
+   * @description Returns the number of elements in the `queue`.
+   * 
+   * @returns { number } the number of elements in the `queue`.
    */
   length(): number {
     return this.queue.length
   }
 
   /**
-   * Checks if the queue is empty.
-   *
-   * @returns {boolean} Whether the queue is empty or not.
+   * @description Checks whether the Queue is empty by returning true if its length is
+   * 0 and false otherwise
+   * 
+   * @returns { boolean } a `boolean` indicating whether the `queue` is empty or not.
    */
   isEmpty(): boolean {
     return this.queue.length === 0
   }
 
   /**
-   * Adds an item to the queue.
-   *
-   * @param item The item being added to the queue.
+   * @description Pushes an item onto a queue.
+   * 
+   * @param { T } item - element to be added to the queue.
    */
   enqueue(item: T): void {
     this.queue.push(item)
   }
 
   /**
-   * Removes an item from the queue and returns it.
-   *
-   * @throws Queue Underflow if the queue is empty.
-   * @returns The item that was removed from the queue.
+   * @description Removes and returns the front element of a queue, checking for an
+   * empty queue first.
+   * 
+   * @returns { T } the value of the front element of the queue, after removing it from
+   * the queue.
    */
   dequeue(): T {
     if (this.isEmpty()) {
@@ -50,9 +52,12 @@ export class ArrayQueue<T> implements Queue<T> {
   }
 
   /**
-   * Returns the item at the front of the queue.
-   *
-   * @returns The item at the front of the queue or null if the queue is empty.
+   * @description Retrieves the first element from a collection, while ensuring that
+   * the collection is not empty. If the collection is empty, it returns `null`.
+   * Otherwise, it returns the first element of the collection.
+   * 
+   * @returns { T | null } the first element of the queue if it is not empty, otherwise
+   * null.
    */
   peek(): T | null {
     if (this.isEmpty()) {

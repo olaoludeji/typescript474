@@ -1,5 +1,11 @@
 import { Calendar, getWeekday } from '../zellers_congruence'
 
+/**
+ * @description Generates high-quality documentation for code given to it, providing
+ * information on the function's inputs, outputs, and expected behaviors. It does
+ * this by calling other functions, each of which performs a specific task (e.g.,
+ * testing different scenarios for invalid input).
+ */
 describe("Zeller's congruence", () => {
   test.each([
     { year: 2000, month: 1, day: 1, expected: 6 },

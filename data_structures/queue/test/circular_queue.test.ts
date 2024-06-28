@@ -1,5 +1,10 @@
 import { CircularQueue } from '../circular_queue'
 
+/**
+ * @description Tests the behavior of a `CircularQueue` class, enqueuing and dequeuing
+ * elements, peeking at the front element, checking if the queue is empty, and verifying
+ * the length of the queue.
+ */
 describe('Circular Queue', () => {
   let queue: CircularQueue<number>
 

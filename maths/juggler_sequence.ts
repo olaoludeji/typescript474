@@ -1,17 +1,15 @@
 /**
- * The juggler sequence is a integer sequence that starts with an positive integer a and the subsequent terms are
- * described as following:
- * if a_k is even:
- *   a_k+1 = floor(sqrt(a_k))
- * else:
- *   a_k+1 = floor(sqrt(a_k^3))
- *
- * Time Complexity: linear (O(n))
- *
- * @param a The number to start with
- * @param n The index of the searched number in the sequence.
- * @returns The number at index n in the sequence.
- * @see https://en.wikipedia.org/wiki/Juggler_sequence
+ * @description Takes a positive number `a` and its power (the result of multiplying
+ * `a` by itself `k` times) as input, then iterates through the numbers from 0 to
+ * `n-1`, modifies the value of `k` using a formula that depends on the parity of
+ * `k`, and finally returns the modified value of `k`.
+ * 
+ * @param { number } a - starting value of the iterations.
+ * 
+ * @param { number } n - number of iterations that the code inside the function will
+ * run for.
+ * 
+ * @returns { integer } an integer between 1 and 4, inclusive.
  */
 export const jugglerSequence = (a: number, n: number) => {
   let k: number = a

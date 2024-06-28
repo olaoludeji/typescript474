@@ -1,13 +1,13 @@
 /**
- * @function findMin
- * @description Find the minimum in an array of numbers.
- * @param {Number[]} nums - An array of numbers.
- * @return {Number} - The minimum.
- * @see https://infinitbility.com/how-to-find-minimum-value-in-array-in-typescript/
- * @example findMin([1,2,3,4,5]) = 1
- * @example findMin([87,6,13,999]) = 6
- * @example findMin([0.8,0.2,0.3,0.5]) = 0.2
- * @example findMin([1,0.1,-1]) = -1
+ * @description Validates the input array by checking its length and throwing an error
+ * if it is empty. It then calculates the minimum value seen so far by iterating over
+ * the array and updating a variable with each new value. Finally, the function returns
+ * the calculated minimum value.
+ * 
+ * @param { number[] } nums - 0-dimensional array to be checked for validity by the
+ * function.
+ * 
+ * @returns { number } the smallest number present in the input array.
  */
 export const findMin = (nums: number[]): number => {
   if (nums.length === 0) {

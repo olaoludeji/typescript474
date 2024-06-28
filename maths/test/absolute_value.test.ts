@@ -1,5 +1,8 @@
 import { absoluteValue } from '../absolute_value'
 
+/**
+ * @description Calculates and returns the absolute value of a given number.
+ */
 describe('absoluteValue', () => {
   it('should return the absolute value of zero', () => {
     const absoluteValueOfZero = absoluteValue(0)

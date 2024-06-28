@@ -1,5 +1,9 @@
 import { pascalsTriangle } from '../pascals_triangle'
 
+/**
+ * @description Iterates over a list of numbers and checks whether the `pascalsTriangle`
+ * function returns the expected value for each number.
+ */
 describe('pascalsTriangle', () => {
   it.each([
     [2, [1, 1]],

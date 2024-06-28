@@ -21,6 +21,13 @@ export class DisjointSet {
   /** Size of the subtree above an element */
   private size: number[]
 
+  /**
+   * @description Creates an array and fills its size, head element with length given
+   * number
+   * 
+   * @param { number } n - number of sets that will be generated, and it determines the
+   * size of each set's id array and the size of each set's internal array.
+   */
   constructor(n: number) {
     // Initially each set has its own id element
     this.head = Array.from({ length: n }, (_, index) => index)
@@ -28,7 +35,14 @@ export class DisjointSet {
   }
 
   /**
-   * Find the representative index for an element
+   * @description Uses path compression to traverse a linked list from the `head`
+   * pointer. It recursively traverses the list until finding the specified `index`,
+   * and returns the value associated with that index in the list.
+   * 
+   * @param { number } index - 0-based index of the element to be found in the linked
+   * list.
+   * 
+   * @returns { number } the value of the specified index in the linked list.
    */
   find(index: number): number {
     if (this.head[index] != index) {
@@ -39,7 +53,15 @@ export class DisjointSet {
   }
 
   /**
-   * Join two sets
+   * @description Takes two sets as inputs and combines them by keeping the bigger set's
+   * head and updating its size, then merges the smaller set with the bigger one by
+   * assigning its head to the bigger one.
+   * 
+   * @param { number } first - set to which the root of the second set will be joined.
+   * 
+   * @param { number } second - 2nd array to be joined with the 1st array in the function,
+   * and it is used to determine which set is bigger and which set to keep as the new
+   * head of the combined sets.
    */
   join(first: number, second: number): void {
     // Get the root of each set to join
@@ -62,7 +84,15 @@ export class DisjointSet {
   }
 
   /**
-   * Check whether two elements are in the same set
+   * @description Compares two numbers and returns true if they are equal, false otherwise.
+   * 
+   * @param { number } first - first value being compared to find if it is the same as
+   * the second value provided as input.
+   * 
+   * @param { number } second - 2nd number to compare with the first number using the
+   * `find()` method.
+   * 
+   * @returns { boolean } a boolean indicating whether two numbers are equal.
    */
   isSame(first: number, second: number): boolean {
     return this.find(first) === this.find(second)

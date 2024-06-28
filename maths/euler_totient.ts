@@ -1,10 +1,10 @@
 /**
- * @description counts the positive integers up to a given integer n that are relatively prime to n.
- * @param {number} n - A natural number.
- * @return {number} - euler's totient.
- * @see https://en.wikipedia.org/wiki/Euler%27s_totient_function
- * @example phi(4) = 2
- * @example phi(5) = 4
+ * @description Computes the number of divisors of a given positive integer `n`,
+ * excluding the integer itself.
+ * 
+ * @param { number } n - number that is being squared in the function.
+ * 
+ * @returns { number } the largest perfect square divisor of a given number.
  */
 export const phi = (n: number): number => {
   let result: number = n

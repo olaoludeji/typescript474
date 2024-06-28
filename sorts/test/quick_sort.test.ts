@@ -1,5 +1,9 @@
 import { QuickSort } from '../quick_sort'
 
+/**
+ * @description Tests the `QuickSort` function's performance for different input
+ * arrangements by evaluating its output against expected outputs.
+ */
 describe('Quick Sort', () => {
   it('should return the correct value for average case', () => {
     expect(QuickSort([1, 4, 2, 5, 9, 6, 3, 8, 10, 7])).toStrictEqual([

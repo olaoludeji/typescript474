@@ -1,11 +1,12 @@
 /**
- * @function perfectSquare
- * @description the square root of a number should be an integer
- * @see [Perfect square](https://www.cuemath.com/algebra/perfect-squares/)
- * @example Perfect square - 9, 16, 25
- * @param {num} number
+/**
+ * @description Verifies whether a given number is a perfect square.
+ * 
+ * @param { number } num - square root of the value provided to the function.
+ * 
+ * @returns { integer } a boolean value indicating whether the input number is a
+ * perfect square.
  */
-
 export const perfectSquare = (num: number) => {
   return Number.isInteger(Math.sqrt(num))
 }

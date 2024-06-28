@@ -1,5 +1,11 @@
 import { binomialCoefficient } from '../binomial_coefficient'
 
+/**
+ * @description Calculates the binomial coefficient of a given `n` and `k`. It provides
+ * two types of tests: one to verify that the function returns the correct result for
+ * valid input, and another to check that it returns 0 when `k` is larger than `n`
+ * or negative.
+ */
 describe('binomialCoefficient', () => {
   it('should calculate the correct binomial coefficient', () => {
     // Test cases with expected results

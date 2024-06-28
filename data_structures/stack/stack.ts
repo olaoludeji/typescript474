@@ -9,17 +9,21 @@ export class Stack<T> {
   private limit: number
 
   /**
-   * constructor of the stack, can set a limit, if not provided there is no limit to the stack.
-   * @param {number} [limit=Number.MAX_VALUE] the limit of the stack
+   * @description Sets a limit value for the object instance, which is passed as an
+   * argument and stored in the `limit` property.
+   * 
+   * @param { number } limit - maximum value that can be assigned to the `limit` instance
+   * variable in the constructor.
    */
   constructor(limit: number = Number.MAX_VALUE) {
     this.limit = limit
   }
 
   /**
-   * @function push
-   * @description - adds a new element to the stack
-   * @param {T} value - the new value to add
+   * @description Pushes a value onto a stack, ignoring any existing capacity limits.
+   * If the stack exceeds its capacity, an error is thrown.
+   * 
+   * @param { T } value - element being added to the stack.
    */
   push(value: T) {
     if (this.length() + 1 > this.limit) {
@@ -30,10 +34,10 @@ export class Stack<T> {
   }
 
   /**
-   * @function pop
-   * @description - remove an element from the top
-   * @throws will throw an error if the stack is empty
-   * @return {T} removed element
+   * @description Retrieves and removes the top element from a stack, returning its
+   * value. If the stack is empty, an `Error` is thrown.
+   * 
+   * @returns { T } the popped value from the stack.
    */
   pop(): T {
     if (this.length() !== 0) {
@@ -44,27 +48,33 @@ export class Stack<T> {
   }
 
   /**
-   * @function length
-   * @description - number of elements in the stack
-   * @return {number} the number of elements in the stack
+   * @description Retrieves the number of elements present in an array by referencing
+   * the internal `stack` property of the given object.
+   * 
+   * @returns { number } the number of elements in the stack.
    */
   length(): number {
     return this.stack.length
   }
 
   /**
-   * @function isEmpty
-   * @description - check if the stack is empty
-   * @return {boolean} returns true if the stack is empty, otherwise false
+   * @description Checks if a string has zero length by comparing its length property
+   * to 0. If they match, the function returns true indicating the string is empty;
+   * otherwise, it returns false.
+   * 
+   * @returns { boolean } `true` when the length of the given object is equal to zero,
+   * and `false` otherwise.
    */
   isEmpty(): boolean {
     return this.length() === 0
   }
 
   /**
-   * @function top
-   * @description - return the last element in the stack without removing it
-   * @return {T | null} return the last element or null if the stack is empty
+   * @description Returns the top element (i.e., the last one added to the stack) or
+   * `null`, if the stack is empty.
+   * 
+   * @returns { T | null } the value stored at the top of the stack, or `null` if the
+   * stack is empty.
    */
   top(): T | null {
     if (this.length() !== 0) {

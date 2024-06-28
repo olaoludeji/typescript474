@@ -1,5 +1,9 @@
 import { linearSearch } from '../linear_search'
 
+/**
+ * @description Test.each() performs linear search on an array and compares the result
+ * to the expected index for validation.
+ */
 describe('Linear search', () => {
   test.each([
     [['o', 'b', 'c'], 'c', 2],

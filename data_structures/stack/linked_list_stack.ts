@@ -11,7 +11,11 @@ export class LinkedListStack<T> {
   private limit: number
 
   /**
-   * Creates a new stack object.
+   * @description Initializes a `SinglyLinkedList` with a specified maximum size (`limit`)
+   * and returns it.
+   * 
+   * @param { number } limit - maximum number of elements that can be stored in the
+   * `list` object created by the constructor, with a default value of `Number.MAX_VALUE`.
    */
   constructor(limit: number = Number.MAX_VALUE) {
     this.list = new SinglyLinkedList<T>()
@@ -19,10 +23,9 @@ export class LinkedListStack<T> {
   }
 
   /**
-   * Gets the top element of the stack.
-   * Time complexity: constant (O(1))
-   *
-   * @returns The top element of the stack.
+   * @description Returns the first item of an array or null if the array is empty.
+   * 
+   * @returns { T | null } the first item of its internal list.
    */
   top(): T | null {
     if (this.list.isEmpty()) {
@@ -33,11 +36,10 @@ export class LinkedListStack<T> {
   }
 
   /**
-   * Inserts a new element on the top of the stack.
-   * Time complexity: constant (O(1))
-   *
-   * @param data The data of the element to insert.
-   * @throws Stack overflow, if the new element does not fit in the limit.
+   * @description Adds a value to an existing list if there is sufficient capacity left
+   * and throws an error "Stack overflow" otherwise.
+   * 
+   * @param { T } data - value to be added to the stack.
    */
   push(data: T): void {
     if (this.list.getLength() + 1 > this.limit) {
@@ -48,11 +50,9 @@ export class LinkedListStack<T> {
   }
 
   /**
-   * Removes the top element from the stack.
-   * Time complexity: constant (O(1))
-   *
-   * @returns The previous top element.
-   * @throws Stack underflow, if the stack has no elements to pop.
+   * @description Removes the last item from a list and returns it.
+   * 
+   * @returns { T } the value of the item at the top of the stack.
    */
   pop(): T {
     if (this.list.isEmpty()) {
@@ -63,18 +63,19 @@ export class LinkedListStack<T> {
   }
 
   /**
-   * Gets the amount of elements in the stack.
-   *
-   * @returns The amount of elements in the stack.
+   * @description Retrieves the number of elements in a given list.
+   * 
+   * @returns { number } the number of elements in the associated list.
    */
   length(): number {
     return this.list.getLength()
   }
 
   /**
-   * Gets whether the stack is empty or not.
-   *
-   * @returns Whether the stack is empty or not.
+   * @description Returns a boolean value indicating whether the list is empty or not,
+   * based on the `list` object's `isEmpty` method.
+   * 
+   * @returns { boolean } a `boolean` value indicating whether the list is empty or not.
    */
   isEmpty(): boolean {
     return this.list.isEmpty()

@@ -4,6 +4,16 @@ import {
   nthFibonacciRecursively
 } from '../fibonacci'
 
+/**
+ * @description Runs tests on a provided function, passing in various arguments and
+ * comparing the result to an expected value.
+ * 
+ * @param { (n: number) => number } func - code that needs to be documented.
+ * 
+ * @returns { number } a series of pairs of integers `n` and the corresponding value
+ * of `func(n)`, which are used to assert that `func` returns the correct values for
+ * each input.
+ */
 const test = (func: (n: number) => number) =>
   it.each([
     [0, 0],

@@ -1,5 +1,11 @@
 import { cycleSort } from '../cycle_sort'
 
+/**
+ * @description Cycles sort arrays of numbers, returning them in ascending order after
+ * each iteration. It checks the array's sorting in multiple scenarios: average case
+ * (nearly random order), worst case (largest elements first), and best case (smallest
+ * elements first).
+ */
 describe('Cycle Sort', () => {
   it('should return the correct value for average case', () => {
     expect(cycleSort([1, 4, 2, 5, 9, 6, 3, 8, 10, 7])).toStrictEqual([

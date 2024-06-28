@@ -1,12 +1,13 @@
 /**
- * @function cycleSort
- * @description Cycle sort is an in-place, unstable sorting algorithm, a comparison sort that is theoretically optimal in terms of the total number of writes to the original array, unlike any other in-place sorting algorithm. It is based on the idea that the permutation to be sorted can be factored into cycles, which can individually be rotated to give a sorted result.
- * @param {number[]}array - The input array
- * @return {number[]} - The sorted array.
- * @see [CycleSort] https://en.wikipedia.org/wiki/Cycle_sort
- * @example cycleSort([8, 3, 5, 1, 4, 2]) = [1, 2, 3, 4, 5, 8]
+/**
+ * @description Iterates through an array of numbers using a nested for loop, and
+ * applies a "move" operation to adjacent elements at each step, rearranging them to
+ * sort the array.
+ * 
+ * @param { number[] } array - 2D array to which the `MoveCycle` function is applied.
+ * 
+ * @returns { array } a sorted array of the original input.
  */
-
 export const cycleSort = (array: number[]) => {
   for (let i: number = 0; i < array.length - 1; i++) {
     MoveCycle(array, i)
@@ -14,6 +15,16 @@ export const cycleSort = (array: number[]) => {
   return array
 }
 
+/**
+ * @description Cycles through an array, assigning each item its previous position,
+ * and repeating until the cycle is complete.
+ * 
+ * @param { number[] } array - 2D array to cycle through, and its elements are used
+ * to determine the next index for the cycle to advance to.
+ * 
+ * @param { number } startIndex - initial position from which to start moving items
+ * in the array.
+ */
 function MoveCycle(array: number[], startIndex: number): void {
   let currentItem: number = array[startIndex]
   let nextChangeIndex: number =
@@ -39,6 +50,24 @@ function MoveCycle(array: number[], startIndex: number): void {
   }
 }
 
+/**
+ * @description Counts the number of smaller items in an array starting from a given
+ * index. It iterates through the array, comparing each item to the current one, and
+ * increments a count when a smaller item is found. The return value is the total
+ * number of smaller items found.
+ * 
+ * @param { number[] } array - 1D array of numbers that contains the smaller items
+ * to be counted, starting from index `startIndex`.
+ * 
+ * @param { number } startIndex - index at which the count of smaller items should
+ * start, in the original array of numbers.
+ * 
+ * @param { number } currentItem - item being compared to the array elements during
+ * the loop iteration.
+ * 
+ * @returns { number } the number of elements in the given array that are smaller
+ * than the current item being compared.
+ */
 function CountSmallerItems(
   array: number[],
   startIndex: number,
@@ -55,6 +84,23 @@ function CountSmallerItems(
   return elementsCount
 }
 
+/**
+ * @description Iterates through an array, skipping over any duplicate items and
+ * returning the position of the next unique item.
+ * 
+ * @param { number[] } array - 1D array whose duplicates are to be skipped, and its
+ * value is an integer or integer array.
+ * 
+ * @param { number } currentPosition - index of the current item being checked for
+ * duplicates in the array.
+ * 
+ * @param { number } currentItem - value being searched for within the array, and is
+ * used to determine whether or not the current position in the array contains the
+ * same value.
+ * 
+ * @returns { number } the index of the next item in the array after the duplicates
+ * have been skipped.
+ */
 function SkipDuplicates(
   array: number[],
   currentPosition: number,
